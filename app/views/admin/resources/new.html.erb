@@ -1,0 +1,22 @@
+<div class="page-title">
+    <div class="row">
+        <div class="contact-form span3"></div>
+        <div class=" contact-us contact-form login-form span7">
+            <h2>Nuevo recurso</h2>
+            <%= form_for @resource, :html => {:multipart => true} do |f| %>     
+
+                <div class"name">
+                    <label>Archivo*</label>
+                    <div id="FileUpload">
+                        <input type="file" size="24" id="BrowserHidden" onchange="getElementById('FileField').value = getElementById('BrowserHidden').value;" name="admin_resource[file]"/>
+                        <div id="BrowserVisible"><input type="text" id="FileField" /></div>
+                    </div>
+                </div>
+                <p>*Dato obligatorio</p><br/>
+                
+                <button type="submit" name="create">Subir recurso</button>
+                <button type="submit" name="cancel">Cancelar</button>
+            <% end %>
+        </div>
+    </div>
+</div>

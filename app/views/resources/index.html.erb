@@ -1,0 +1,49 @@
+<div class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <i class="icon-folder-open page-title-icon"></i>
+                <h2>Recursos</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<%= @resources.size %>
+<div class="what-we-do container">
+	<div class="row">
+		<div class="service span3">
+			<div class="icon-awesome">
+                <i class="icon-user"></i>
+            </div>
+            <h4>Usuarios</h4>
+            <p>Le permite crear, modificar y eliminar usuarios así como asignarles roles. Solo los usuarios tendrán acceso a la administración del sitio.</p>
+            <a href="/admin/users">Administrar</a>
+		</div>
+		<div class="service span3">
+            <div class="icon-awesome">
+                <i class="icon-tags"></i>
+            </div>
+            <h4>Roles</h4>
+            <p>Le permite administrar los roles del sistema (crear, modificar, eliminar). También podrá asociarles permisos a cada rol.</p>
+            <a href="/admin/roles">Administrar</a>
+        </div>
+        <div class="service span3">
+            <div class="icon-awesome">
+                <i class="icon-folder-open"></i>
+            </div>
+            <h4>Recursos</h4>
+            <p>Podrá subir recursos, decidir si seran públicos o privados. Los recursos pueden categorizarse para hacer más fácil su ubicación</p>
+            <a href="/admin/resources">Administrar</a>
+        </div>
+        <div class="service span3">
+            <div class="icon-awesome">
+                <i class="icon-calendar"></i>
+            </div>
+            <h4>Eventos</h4>
+            <p>Usado para crear eventos y darlos de baja, además le permite seleccionar grupos de interes para asistir a dichos eventos.</p>
+            <a href="/admin/events">Administrar</a>
+        </div>
+	</div>
+	<br/>
+	<br/>
+</div>

@@ -1,0 +1,42 @@
+img.gravatar {
+	border: 1px solid #999;
+	margin-bottom: -15px;
+}
+
+#FileUpload {
+    position:relative;
+}
+
+#BrowserVisible {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    background:url(upload.png) 100% 1px no-repeat;
+    width:345px;
+	height:30px;
+}
+
+#FileField {
+    width:200px;
+    height: 20px;
+    margin-right:85px;
+	padding: 6px;
+    font-size: 13px;
+    background: #fff url('upload_bg.gif') top left repeat-x;
+    border: 1px solid #d5d5d5;
+	color: #333;
+	border-radius: 4px 4px 4px 4px !important;
+}
+
+#BrowserHidden {
+    position:relative;
+    width:345px;
+	height:30px;
+    text-align: right;
+    -moz-opacity:0;
+    filter:alpha(opacity: 0);
+    opacity: 0;
+    z-index: 2;
+	
+}

@@ -1,0 +1,57 @@
+	<div class="container">
+        <div class="header row">
+            <div class="span12">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <h1>
+                            <a class="brand" href="/">Andia - a super cool design agency...</a>
+                        </h1>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right">
+                                <li
+                                <% if @current_page == "INICIO" %>
+                                    class="current-page"
+                                <%end %>
+                                >
+                                    <a href="/"><i class="icon-home"></i><br />Inicio</a>
+                                </li>
+                                <li
+                                <% if @current_page == "EVENTOS" %>
+                                    class="current-page"
+                                <%end %>
+                                >
+                                    <a href="/events"><i class="icon-calendar"></i><br />Eventos</a>
+                                </li>
+                                <li
+                                <% if @current_page == "RECURSOS" %>
+                                    class="current-page"
+                                <%end %>
+                                >
+                                    <a href="/recursos"><i class="icon-folder-open"></i><br />Recursos</a>
+                                </li>
+                                <li
+                                <% if @current_page == "NOSOTROS" %>
+                                    class="current-page"
+                                <%end %>
+                                >
+                                    <a href="/nosotros"><i class="icon-user"></i><br />Nosotros</a>
+                                </li>
+                                <li
+                                <% if @current_page == "ADMIN" %>
+                                    class="current-page"
+                                <%end %>
+                                >
+                                    <a href="/admin"><i class="icon-signin"></i><br />Administrar</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

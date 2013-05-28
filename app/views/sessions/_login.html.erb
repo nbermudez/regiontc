@@ -1,0 +1,17 @@
+<div class="page-title">
+	<div class="row">
+		<div class="contact-form span4"></div>
+		<div class="contact-us login-form span4">
+			<%= form_for(:session, :url => signin_url) do |f| %>
+		        <%= f.label :email, 'Usuario' %>
+		        <%= f.text_field :email, :placeholder => 'Ingrese su nombre de usuario...'%>
+
+		        <%= f.label :password, 'Contraseña' %>
+		        <%= f.password_field :password, :placeholder => 'Ingrese su contraseña...'%>
+
+		        <br/>
+		        <button type="submit">Entrar</button>
+		    <% end %>
+    	</div>
+	</div>
+</div>
