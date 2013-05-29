@@ -1,5 +1,5 @@
 class Admin::Resource < ActiveRecord::Base
-	attr_accessible :filename, :content_type, :file
+	attr_accessible :filename, :content_type, :file, :tags_attributes
 
 	has_many :tags
 	mount_uploader :file, FileUploader
@@ -9,6 +9,6 @@ class Admin::Resource < ActiveRecord::Base
 	private
 		def fillout
 			self.filename = self.file.filename
-			self.content_type = self.file.content_type
+			#self.content_type = self.file.content_type
 		end
 end

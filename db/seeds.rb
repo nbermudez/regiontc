@@ -7,5 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Admin::User.create(:email=>"nestor.bermudez@unitec.edu", :first_name => "Nestor",
-	:last_name=>"Bermudez", :password="Girardot8", 
+	:last_name=>"Bermudez", :password => "Girardot8", 
 	:password_confirmation => "Girardot8")
