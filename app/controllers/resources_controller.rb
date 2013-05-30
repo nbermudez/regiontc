@@ -1,15 +1,10 @@
 class ResourcesController < ApplicationController
 	def index
 		@current_page = "RECURSOS"
-		@resources = Resource.all
-		@tags = Tag.group(:title)
+		@tags = Tag.find(:all, :group => "id, title")
 	end
 
-	def create
-		if params[:cancel]
-			redirect_to admin_url
-		else
-			
-		end
+	def bytag
+		@resources = Resource.joins(:tags).where(:tags => {:title => params[:tag]})
 	end
 end
