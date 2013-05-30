@@ -8,4 +8,8 @@ class CreateResources < ActiveRecord::Migration
       t.timestamps
     end
   end
+
+  def self.up
+    Resource.reset_column_information
+  end
 end

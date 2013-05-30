@@ -10,4 +10,8 @@ class CreateUsers < ActiveRecord::Migration
       t.timestamps
     end
   end
+
+  def self.up
+    User.reset_column_information
+  end
 end

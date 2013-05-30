@@ -8,4 +8,8 @@ class CreateTags < ActiveRecord::Migration
     end
     add_index :tags, :resource_id
   end
+
+  def self.up
+    Tag.reset_column_information
+  end
 end
