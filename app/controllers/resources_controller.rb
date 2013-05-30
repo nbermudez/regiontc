@@ -1,7 +1,7 @@
 class ResourcesController < ApplicationController
 	def index
 		@current_page = "RECURSOS"
-		@resources = Admin::Resource.all
+		@resources = Resource.all
 		@tags = Tag.group(:title)
 	end
 

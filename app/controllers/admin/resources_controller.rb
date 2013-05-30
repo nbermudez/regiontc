@@ -1,19 +1,21 @@
 class Admin::ResourcesController < AdminController
 	def index
-		@resources = Admin::Resource.all(:select=>"id, filename")
+		@resources = Resource.all(:select=>"id, filename")
 	end
 
 	def new
-		@resource = Admin::Resource.new
+		@resource = Resource.new
 	end
 
 	def create
 		if params[:cancel]
 			redirect_to admin_resources_url
+			return 
 		else
-			@resource = Admin::Resource.new(params[:admin_resource])
+			@resource = Resource.new(params[:admin_resource])
 			if @resource.save
-				redirect_to @resource
+				redirect_to admin_resource_path(@resource.id)
+				return
 			else
 				render :action => "new"
 			end			
@@ -21,7 +23,7 @@ class Admin::ResourcesController < AdminController
 	end
 
 	def show
-		@resource = Admin::Resource.find(params[:id])
+		@resource = Resource.find(params[:id])
 		tmp = Tag.all
 		@tags_available = Array.new
 		tmp.each do |t|
@@ -30,7 +32,7 @@ class Admin::ResourcesController < AdminController
 	end
 
 	def destroy
-		@resource = Admin::Resource.find(params[:id])
+		@resource = Resource.find(params[:id])
 		@resource.destroy
 
 		redirect_to admin_resources_url

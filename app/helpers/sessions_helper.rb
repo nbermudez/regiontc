@@ -23,7 +23,7 @@ module SessionsHelper
 
 	private
 		def user_from_remember_token
-			Admin::User.authenticate_with_salt(*remember_token)
+			User.authenticate_with_salt(*remember_token)
 		end
 
 		def remember_token

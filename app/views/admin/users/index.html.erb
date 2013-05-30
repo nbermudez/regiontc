@@ -17,7 +17,7 @@
 						<tr>
 							<td><%= u.first_name + " " + u.last_name %></td>
 							<td><%= u.email %></td>
-							<td><%= link_to 'Administrar roles', u %></td>
+							<td><%= link_to 'Administrar roles', admin_user_path(u.id) %></td>
 						</tr>
 					<% end %>
 					</tbody>

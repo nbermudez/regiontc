@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def create
-  	user = Admin::User.authenticate(params[:session][:email], params[:session][:password])
+  	user = User.authenticate(params[:session][:email], params[:session][:password])
     if user.nil?
     else
       sign_in user

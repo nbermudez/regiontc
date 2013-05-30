@@ -33,7 +33,7 @@ function hide_new_tag(){
 			</table>
 			<% end %>
 			<hr>
-			<%= form_for [@resource, @resource.tags.build] do |f| %>
+			<%= form_for [:admin, @resource, @resource.tags.build] do |f| %>
 				<div class="name">
 					<%= f.label :title, "Tag" %>
 					<%= f.select :title, options_for_select(@tags_available.push("Nuevo tag")), {},
