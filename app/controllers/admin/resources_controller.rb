@@ -10,7 +10,6 @@ class Admin::ResourcesController < AdminController
 	def create
 		if params[:cancel]
 			redirect_to admin_resources_url
-			return 
 		else
 			@resource = Resource.new(params[:admin_resource])
 			if @resource.save

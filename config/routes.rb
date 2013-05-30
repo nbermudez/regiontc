@@ -18,6 +18,6 @@ Regionsps::Application.routes.draw do
     resources :events
   end
 
-   root :to => 'home#index'
+  root :to => 'home#index'
 
 end
