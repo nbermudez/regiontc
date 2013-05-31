@@ -1,8 +1,9 @@
 class Resource < ActiveRecord::Base
-	attr_accessible :filename, :content_type, :file, :tags_attributes
+	attr_accessible :filename, :content_type, :file, :tags_attributes, :thumbnail, :description
 
 	has_many :tags
 	mount_uploader :file, FileUploader
+	mount_uploader :thumbnail, ImageUploader
 
 	before_save :fillout
 

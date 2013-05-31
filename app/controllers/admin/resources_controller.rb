@@ -11,7 +11,8 @@ class Admin::ResourcesController < AdminController
 		if params[:cancel]
 			redirect_to admin_resources_url
 		else
-			@resource = Resource.new(params[:admin_resource])
+			@resource = Resource.new(params[:resource])
+			@resource.content_type = params[:resource][:file].content_type
 			if @resource.save
 				redirect_to admin_resource_path(@resource.id)
 				return
@@ -23,7 +24,7 @@ class Admin::ResourcesController < AdminController
 
 	def show
 		@resource = Resource.find(params[:id])
-		tmp = Tag.all
+		tmp = Tag.select(:title).uniq
 		@tags_available = Array.new
 		tmp.each do |t|
 			@tags_available.push(t.title)

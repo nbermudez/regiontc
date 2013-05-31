@@ -14,7 +14,11 @@ class Admin::TagsController < ApplicationController
 					@tag.title = params[:new_tag]
 				end
 			else
-				@tag = @resource.tags.new(params[:tag][:title])				
+				@tag = @resource.tags.new(params[:tag])				
+			end
+			if Resource.joins(:tags).where(:tags => {:title => params[:tag][:title]}, :id => @resource.id).any?
+				redirect_to admin_resource_path(@resource.id)
+				return
 			end
 			if @tag.save
 				redirect_to admin_resource_path(@resource.id)

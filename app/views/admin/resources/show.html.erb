@@ -12,8 +12,11 @@ function hide_new_tag(){
 <div class="page-title">
     <div class="row">
     	<div class="contact-form span3"></div>        
-        <div class=" contact-us contact-form login-form span7">
-			<h3 style="margin: auto; padding-left: 2%"><%= @resource.filename%></h3>
+        <div class=" contact-us contact-form login-form span7">	
+			<h3 style="margin: auto; padding-left: 3%">
+				<%= @resource.filename%>
+			</h3>
+			<p>Descripción: <%= @resource.description%></p>
 			<% if @resource.tags.any? %>
 			<table id="hor-minimalist-b">
 				<thead>

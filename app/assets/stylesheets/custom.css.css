@@ -3,11 +3,11 @@ img.gravatar {
 	margin-bottom: -15px;
 }
 
-#FileUpload {
+.FileUpload {
     position:relative;
 }
 
-#BrowserVisible {
+.BrowserVisible {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -17,7 +17,7 @@ img.gravatar {
 	height:30px;
 }
 
-#FileField {
+.BrowserVisible input.FileField {
     width:200px;
     height: 20px;
     margin-right:85px;
@@ -29,7 +29,7 @@ img.gravatar {
 	border-radius: 4px 4px 4px 4px !important;
 }
 
-#BrowserHidden {
+input.BrowserHidden {
     position:relative;
     width:345px;
 	height:30px;
@@ -39,4 +39,65 @@ img.gravatar {
     opacity: 0;
     z-index: 2;
 	
+}
+p {
+    margin-bottom: 0px;
+    vertical-align: baseline;
+}
+p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+.img-decor {
+    padding: 1px;
+    background-color: #fff;
+    border: 1px solid #9ea0a2;
+    -moz-box-shadow: 2px 4px 13px #bbb;
+    -webkit-box-shadow: 2px 4px 13px #bbb;
+    box-shadow: 2px 4px 13px #bbb;
+}
+.img-no-shadow, .img-temple {
+    background-color: #FFFFFF;
+    border: 1px solid #afa190;
+    padding: 1px;
+}
+.teasers {
+    border-bottom: 1px dashed #d4d1c8;
+    padding-bottom: 15px;
+}
+.teasers h2 {
+    margin-bottom: 12px;
+}
+.teasers li {
+    min-height: 125px;
+    padding: 0 0 22px 41.469194312796%;
+    position: relative;
+    vertical-align: baseline;
+}
+.teasers p {
+    color: #706f6b;
+    line-height: 18px;
+}
+.teasers li img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.chuckit:after {
+    color:#A2C864;
+    display:inline-block;
+    font-size:14px;
+    position:relative;
+    top:0;
+    margin-left:6px;
+    /*border:1px solid red;*/
+}
+.resource_desc{
+    margin-left: 10px;
+    text-align:justify;
+    text-justify:inter-word;
+    margin-right: 15px
 }
