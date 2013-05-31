@@ -5,7 +5,7 @@ class Resource < ActiveRecord::Base
 	mount_uploader :file, FileUploader
 	mount_uploader :thumbnail, ImageUploader
 
-	before_save :fillout
+	#before_save :fillout
 
 	private
 		def fillout

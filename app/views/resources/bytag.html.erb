@@ -10,13 +10,13 @@
 						<table>
 						  <tr>
 						    <td rowspan="2" style="width: 200px;">
-						    	<a href="<%= u.file_url%>" class="chuckit">
+						    	<a href="<%= u.file_url%>" class="chuckit" target="_blank">
 									<%= image_tag u.thumbnail_url(:thumb).to_s, :class => 'img-decor', :style => "opacity: 1;" %>
 								</a>
 							</td>
 						    <td style="margin-left: 10px">
 						    	<h2 style="vertical-align: baseline">
-						    		<a href="<%= u.file_url%>" class="chuckit">
+						    		<a href="<%= u.file_url%>" class="chuckit" target="_blank">
 						    			<%= u.filename %>
 						    		</a>
 						    	</h2>
