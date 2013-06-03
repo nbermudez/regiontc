@@ -14,11 +14,13 @@ class Admin::RolesController < AdminController
 
 		if t
 			@role.description = t.description
+			@role.permissions = t.permissions
 		end
 
 		if @role.save
 			redirect_to admin_user_path(@user.id)
 		else
+			raise @role.errors.first.to_s
 		end
 	end
 

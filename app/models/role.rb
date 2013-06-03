@@ -5,9 +5,6 @@ class Role < ActiveRecord::Base
   has_and_belongs_to_many :permissions
   has_and_belongs_to_many :users, :join_table => "users_roles"
 
-  validates :name, :presence => true
-  validates :description, :presence => true
-
   before_save :right_name
   after_save  :update_permissions
 
@@ -19,8 +16,10 @@ class Role < ActiveRecord::Base
   	end
 
     def update_permissions
-      permissions.delete_all
-      selected_pers = permissions_list.nil? ? []: permissions_list.collect{|id,other| Permission.find(id)}
-      selected_pers.each {|per| self.permissions << per}
+      if permissions_list.present?
+        permissions.delete_all
+        selected_pers = permissions_list.nil? ? []: permissions_list.collect{|id,other| Permission.find(id)}
+        selected_pers.each {|per| self.permissions << per}
+      end
     end
 end
