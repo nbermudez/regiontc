@@ -5,8 +5,12 @@ bootstrap/glyphicons-halflings.png: bootstrap/glyphicons-halflings-2851b489e8c39
 bootstrap/glyphicons-halflings/index.png: bootstrap/glyphicons-halflings-2851b489e8c39f8fad44fc10efb99c3e.png
 circle-arrow-light-green-1.png: circle-arrow-light-green-1-c6f7c47e944b2e70ea987809803c62ce.png
 circle-arrow-light-green-1/index.png: circle-arrow-light-green-1-c6f7c47e944b2e70ea987809803c62ce.png
+edit-29.png: edit-29-c15f091f8640ce186698d83094844212.png
+edit-29/index.png: edit-29-c15f091f8640ce186698d83094844212.png
 file_delete.png: file_delete-21a19b65d06af4efaf3dd767d8b2914f.png
 file_delete/index.png: file_delete-21a19b65d06af4efaf3dd767d8b2914f.png
+file_edit.png: file_edit-d7fd98c94f2f740c98be4bfbaee3a724.png
+file_edit/index.png: file_edit-d7fd98c94f2f740c98be4bfbaee3a724.png
 galery/Family-History-Banner.jpeg: galery/Family-History-Banner-a4a95453c1d07ded33ab3794da170978.jpeg
 galery/Family-History-Banner/index.jpeg: galery/Family-History-Banner-a4a95453c1d07ded33ab3794da170978.jpeg
 galery/family.jpg: galery/family-9258b3e0415171dd94e44eff39d81f47.jpg
@@ -243,8 +247,8 @@ upload_bg.gif: upload_bg-631278a6b1070d4046ef36764e204a70.gif
 upload_bg/index.gif: upload_bg-631278a6b1070d4046ef36764e204a70.gif
 application.js: application-62d134d76b9f78504d8c0485451e6fde.js
 application/index.js: application-62d134d76b9f78504d8c0485451e6fde.js
-application.css: application-8df078a429ecb5a44282c23aa9d4f4a9.css
-application/index.css: application-8df078a429ecb5a44282c23aa9d4f4a9.css
+application.css: application-19887ab5c531d2f38c394fe850eda26e.css
+application/index.css: application-19887ab5c531d2f38c394fe850eda26e.css
 font-awesome/fontawesome-webfont.eot: font-awesome/fontawesome-webfont-86a6da438b901860c3a54e21f9098bf8.eot
 font-awesome/fontawesome-webfont/index.eot: font-awesome/fontawesome-webfont-86a6da438b901860c3a54e21f9098bf8.eot
 font-awesome/fontawesome-webfont.svg: font-awesome/fontawesome-webfont-c3f3594758768fbb43eae746d18b3b50.svg
