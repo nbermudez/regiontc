@@ -13,3 +13,30 @@ User.create(:email=>"nestor.bermudez@unitec.edu", :first_name => "Nestor",
 User.create(:email=>"jared.ocampo@unitec.edu", :first_name => "Jared",
 	:last_name=>"Ocampo", :password => "jocampo", 
 	:password_confirmation => "jocampo")
+
+
+Permission.create(:name => "Crear Usuario", :description => "No description available")
+Permission.create(:name => "Modificar Usuario", :description => "No description available")
+Permission.create(:name => "Eliminar Usuario", :description => "No description available")
+Permission.create(:name => "Ver Usuario", :description => "No description available")
+
+Permission.create(:name => "Crear Evento", :description => "No description available")
+Permission.create(:name => "Modificar Evento", :description => "No description available")
+Permission.create(:name => "Eliminar Evento", :description => "No description available")
+Permission.create(:name => "Ver Evento", :description => "No description available")
+
+Permission.create(:name => "Crear Recurso", :description => "No description available")
+Permission.create(:name => "Modificar Recurso", :description => "No description available")
+Permission.create(:name => "Eliminar Recurso", :description => "No description available")
+Permission.create(:name => "Ver Recurso", :description => "No description available")
+
+Permission.create(:name => "Crear Tag", :description => "No description available")
+Permission.create(:name => "Modificar Tag", :description => "No description available")
+Permission.create(:name => "Eliminar Tag", :description => "No description available")
+Permission.create(:name => "Ver Tag", :description => "No description available")
+
+Permission.create(:name => "Crear Rol", :description => "No description available")
+Permission.create(:name => "Modificar Rol", :description => "No description available")
+Permission.create(:name => "Eliminar Rol", :description => "No description available")
+Permission.create(:name => "Ver Rol", :description => "No description available")
+Permission.create(:name => "Asignar Rol", :description => "No description available")

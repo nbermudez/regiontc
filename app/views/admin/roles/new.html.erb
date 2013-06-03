@@ -1,0 +1,82 @@
+<script type="text/javascript">
+var var_control = 1, nuevo = 0;
+function show_new_role(){ 
+	$('div[id="new_role_div"]').each (function() {  this.style['display'] = 'block' });
+	$('div[id="asignar_div"]').each (function() {  this.style['display'] = 'none' });
+	nuevo = 1;
+}
+function hide_new_role(){ 
+	$('div[id="new_role_div"]').each (function() {  this.style['display'] = 'none' });
+	$('div[id="asignar_div"]').each (function() {  this.style['display'] = 'block' });
+	nuevo = 0;
+}
+</script>
+<div class="page-title">
+	<h1 class="title">&nbsp;&nbsp;&nbsp;<%= @user.name %></h1>
+    <div class="row">
+    	
+    	<div class="contact-us contact-form span"></div>
+        <div class="contact-us contact-form login-form span4">
+        	<h2>Roles actuales</h2>
+            <hr/>
+        	<% if @user.roles.any? %>
+			<table id="hor-minimalist-c">
+				<thead>
+					<tr>
+						<th scope="col">Rol</th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+				<% @user.roles.each do |u| %>
+					<tr>
+						<td><%= u.name %></td>
+						<td>
+							<% if puede("Eliminar Rol") || true%>
+							<%= link_to (image_tag('file_delete.png', :size =>'15x15')), admin_user_role_path(@user, u), :method => :delete, :data => { :confirm => '¿Esta seguro?' }%>
+							<% end %>
+						</td>
+					</tr>
+				<% end %>
+				</tbody>
+			</table>
+			<% else %>
+				<p>Aun no tiene roles asignados</p>
+			<% end %>
+        </div>
+        <div class=" contact-us contact-form login-form span7">
+            <h2>Asignación de roles</h2>
+            <hr/>            
+            <%= form_for [:admin, @user, @user.roles.build] do |f| %>
+            	<div class="name">
+            		<h3>Agregar rol:</h3>
+        			<%= f.select :name_select, options_for_select(@roles_available), {},
+        			{:onChange => "if(this.value == 'Nuevo rol') show_new_role();else hide_new_role();"}%>
+        		</div>
+            	<div id="new_role_div" style="display:none">
+	              <div class="name">
+	                <%= f.label :name, 'Rol*', :class => 'nameLabel' %>
+	                <%= f.text_field :name, :placeholder => 'Ingrese nombre del rol...' %>
+	              </div>
+	              <div class="name">
+	                <%= f.label :description, 'Descripción*', :class => 'nameLabel' %>
+	                <%= f.text_field :description, :placeholder => 'Descripción del rol...' %>
+	              </div>
+                  <p>*Dato obligatorio</p><br/>
+                  <button type="submit" name="create">Crear</button>                
+                  <button type="submit" name="cancel">Cancelar</button>
+            	</div>
+            	<div id="asignar_div" style="display:block">
+					<button type="submit" name="asignar">Asignar</button>
+				</div>           	
+            	
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<div class="call-to-action-text ">
+	<div class="ca-button">	
+		<%= link_to 'Atrás', admin_user_path(@user.id) %>
+	</div>
+</div>

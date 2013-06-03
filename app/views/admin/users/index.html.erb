@@ -4,6 +4,7 @@
         <div class=" contact-us contact-form login-form span7">
 			<% if @users.any? %>
 				<h3 style="margin-left:40%;">Usuarios</h3>
+				<hr/>
 				<table id="hor-minimalist-b">
 					<thead>
 						<tr>
@@ -17,7 +18,11 @@
 						<tr>
 							<td><%= u.first_name + " " + u.last_name %></td>
 							<td><%= u.email %></td>
-							<td><%= link_to 'Administrar roles', admin_user_path(u.id) %></td>
+							<td>
+								<% if puede "Modificar Usuario" %>
+								<%= link_to 'Administrar', admin_user_path(u.id) %>
+								<% end %>
+							</td>
 						</tr>
 					<% end %>
 					</tbody>
@@ -35,7 +40,9 @@
 	<div class="ca-button">
 	    <a href="<%= admin_path %>">Atrás</a>
 	</div>
+	<% if puede "Crear Usuario" %>
 	<div class="ca-button">
 	    <a href="<%= new_admin_user_path %>">Nuevo usuario</a>
 	</div>
+	<% end %>
 </div>

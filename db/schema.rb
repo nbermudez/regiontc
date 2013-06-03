@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130530214022) do
+ActiveRecord::Schema.define(:version => 20130602185711) do
+
+  create_table "permissions", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "permissions_roles", :id => false, :force => true do |t|
+    t.integer "permission_id"
+    t.integer "role_id"
+  end
 
   create_table "resources", :force => true do |t|
     t.string   "filename"
@@ -21,6 +33,14 @@ ActiveRecord::Schema.define(:version => 20130530214022) do
     t.datetime "updated_at",   :null => false
     t.string   "thumbnail"
     t.text     "description"
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "description"
+    t.integer  "user_id"
   end
 
   create_table "tags", :force => true do |t|
@@ -40,6 +60,11 @@ ActiveRecord::Schema.define(:version => 20130530214022) do
     t.string   "salt"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+  end
+
+  create_table "users_roles", :id => false, :force => true do |t|
+    t.integer "user_id"
+    t.integer "role_id"
   end
 
 end

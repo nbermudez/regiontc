@@ -4,6 +4,7 @@
         <div class=" contact-us contact-form login-form span7">
 			<% if @resources.size > 0 %>
 				<h3 style="margin-left:40%;">Recursos</h3>
+				<hr/>
 				<table id="hor-minimalist-b">
 					<thead>
 						<tr>
@@ -16,9 +17,17 @@
 					<% @resources.each do |u| %>
 						<tr>
 							<td><%= u.filename %></td>
-							<td><%= link_to 'Eliminar', admin_resource_path(u.id), :method => :delete,
-							 :data => { :confirm => '¿Seguro que desea eliminar este archivo?' } %></td>
-							<td><%= link_to 'Administrar', admin_resource_path(u.id) %></td>
+							<td>
+								<% if puede "Eliminar Recurso" %>
+								<%= link_to 'Eliminar', admin_resource_path(u.id), :method => :delete,
+							 :data => { :confirm => '¿Seguro que desea eliminar este archivo?' } %>
+							 	<% end %>
+							</td>
+							<td>
+								<% if puede "Editar Recurso"%>
+								<%= link_to 'Administrar', admin_resource_path(u.id) %>
+								<% end %>
+							</td>
 						</tr>
 					<% end %>
 					</tbody>
@@ -35,7 +44,9 @@
 	<div class="ca-button">
 	    <a href="<%= admin_path %>">Atrás</a>
 	</div>
+	<% if puede "Crear Recurso" %>
 	<div class="ca-button">
 	    <a href="<%= new_admin_resource_path %>">Nuevo recurso</a>
 	</div>
+	<% end %>
 </div>

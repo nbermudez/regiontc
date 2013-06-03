@@ -1,0 +1,54 @@
+<div class="page-title">
+    <div class="row">
+    	<div class="contact-form span3"></div>        
+        <div class=" contact-us contact-form login-form span7">
+			<% if @roles.size > 0 %>
+				<h3 style="margin-left:40%;">Roles</h3>
+				<hr/>
+				<table id="hor-minimalist-b">
+					<thead>
+						<tr>
+							<th scope="col">Rol</th>
+							<th scope="col">Descripción</th>
+							<th scope="col"></th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody>
+					<% @roles.each do |u| %>
+						<tr>
+							<td><%= u.name %></td>
+							<td><%= u.description %></td>
+							<td>
+								<% if puede "Modificar Rol" %>
+								<%= link_to 'Editar',  admin_roles_update_path(u.name), :method => :post %>
+								<% end %>
+							</td>
+							<td>
+								<% if puede "Eliminar rol" %>
+								<%= link_to 'Eliminar',  admin_roles_update_path(u.name), :method => :delete,
+							 :data => { :confirm => '¿Seguro que desea eliminar este archivo?' } %>
+							 	<% end %>
+							</td>
+						</tr>
+					<% end %>
+					</tbody>
+				</table>
+			<% else %>
+				<h2>Aún no ha creado roles.</h2>
+			<% end %>
+			<br/>
+			<br/>
+		</div>
+	</div>
+</div>
+<div class="call-to-action-text ">
+	<div class="ca-button">
+	    <a href="<%= admin_path %>">Atrás</a>
+	</div>
+	<% if puede "Crear Rol" %>
+	<div class="ca-button">
+	    <a href="<%= admin_roles_new_path %>">Nuevo rol</a>
+	</div>
+	<% end %>
+</div>

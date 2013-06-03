@@ -1,8 +1,12 @@
 require 'digest'
 class User < ActiveRecord::Base
-  attr_accessor :password
+  attr_accessor :password, :password_old
   attr_accessible :email, :first_name, :last_name, :password, 
-                  :password_confirmation, :encrypted_password
+                  :password_confirmation, :encrypted_password, :password_old
+
+  has_and_belongs_to_many :roles, :join_table => "users_roles"
+  has_many :permissions, :through => :roles
+  accepts_nested_attributes_for :roles
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -15,7 +19,11 @@ class User < ActiveRecord::Base
                         :confirmation => true,
                         :length       => { :within => 6..40 }
 
-  before_create :encrypt_password
+  before_save :encrypt_password
+
+  def name
+    "#{self.first_name} #{self.last_name}"
+  end
 
   def has_password?(submitted_password)
 		self.encrypted_password == encrypt(submitted_password)

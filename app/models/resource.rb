@@ -6,6 +6,9 @@ class Resource < ActiveRecord::Base
 	mount_uploader :thumbnail, ImageUploader
 
 	#before_save :fillout
+	validates :filename, :presence => true
+	validates :file, :presence => true
+	validates :description, :presence => true
 
 	private
 		def fillout

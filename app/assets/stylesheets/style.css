@@ -78,7 +78,7 @@ strong { font-weight: bold; }
 
 .header ul.nav li.current-page a {
     padding-top: 25px;
-    border-top: 5px solid #9d426b;
+    border-bottom: 5px solid #9d426b;
     background: #f8f8f8;
 }
 

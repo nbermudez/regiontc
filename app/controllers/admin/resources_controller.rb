@@ -1,10 +1,18 @@
 class Admin::ResourcesController < AdminController
 	def index
-		@resources = Resource.all(:select=>"id, filename")
+		if puede "Ver Recurso"
+			@resources = Resource.all(:select=>"id, filename")
+		else
+			redirect_to access_denied_path
+		end
 	end
 
 	def new
-		@resource = Resource.new
+		if puede "Crear Recurso"
+			@resource = Resource.new
+		else
+			redirect_to access_denied_path
+		end
 	end
 
 	def create
@@ -23,18 +31,26 @@ class Admin::ResourcesController < AdminController
 	end
 
 	def show
-		@resource = Resource.find(params[:id])
-		tmp = Tag.select(:title).uniq
-		@tags_available = Array.new
-		tmp.each do |t|
-			@tags_available.push(t.title)
+		if puede "Ver Recurso"
+			@resource = Resource.find(params[:id])
+			tmp = Tag.select(:title).uniq
+			@tags_available = Array.new
+			tmp.each do |t|
+				@tags_available.push(t.title)
+			end
+		else
+			redirect_to access_denied_path
 		end
 	end
 
 	def destroy
-		@resource = Resource.find(params[:id])
-		@resource.destroy
+		if puede "Eliminar Recurso"
+			@resource = Resource.find(params[:id])
+			@resource.destroy
 
-		redirect_to admin_resources_url
+			redirect_to admin_resources_url
+		else
+			redirect_to access_denied_path
+		end
 	end
 end

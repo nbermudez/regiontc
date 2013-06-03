@@ -1,11 +1,25 @@
 <script type="text/javascript">
+var var_control = 1, nuevo = 0;
 function show_new_tag(){ 
 	$('input[type="hidden"]').filter("[name='new_tag']").each (function() {  this.value = '' });
 	$('input[type="hidden"]').filter("[name='new_tag']").each (function() {  this.type = 'text' });
+	nuevo = 1;
 }
 function hide_new_tag(){ 
 	$('input[type="text"]').filter("[name='new_tag']").each (function() {  this.value = '' });
 	$('input[type="text"]').filter("[name='new_tag']").each (function() {  this.type = 'hidden' });	
+	nuevo = 0;
+}
+function display_edit(){ 
+	if (var_control == 1 && nuevo == 0){
+		$('div[id="edit_tag_div"]').each (function() {  this.style['display'] = 'block' });
+		$('div[id="taggear_div"]').each (function() {  this.style['display'] = 'none' });
+		var_control = 2;
+	}else{
+		$('div[id="edit_tag_div"]').each (function() {  this.style['display'] = 'none' });
+		$('div[id="taggear_div"]').each (function() {  this.style['display'] = 'block' });
+		var_control = 1;
+	}
 }
 </script>
 
@@ -29,7 +43,11 @@ function hide_new_tag(){
 				<% @resource.tags.each do |u| %>
 					<tr>
 						<td><%= u.title %></td>
-						<td><%= link_to (image_tag('file_delete.png', :size =>'15x15')), admin_resource_tag_path(@resource, u), :method => :delete, :data => { :confirm => '¿Esta seguro?' }%></td>
+						<td>
+							<% if puede("Eliminar Tag") %>
+							<%= link_to (image_tag('file_delete.png', :size =>'15x15')), admin_resource_tag_path(@resource, u), :method => :delete, :data => { :confirm => '¿Esta seguro?' }%>
+							<% end %>
+						</td>
 					</tr>
 				<% end %>
 				</tbody>
@@ -41,13 +59,22 @@ function hide_new_tag(){
 					<%= f.label :title, "Tag" %>
 					<%= f.select :title, options_for_select(@tags_available.push("Nuevo tag")), {},
 					{:onChange => "if(this.value == 'Nuevo tag') show_new_tag();else hide_new_tag();"} %>
+					<% if puede("Modificar Tag") %>
+					<%= link_to (image_tag('file_edit.png', :size => '25x25', :style => 'vertical-align: top;')), '#', :onclick=>'display_edit();return false;' %> 
+					<% end %>
 					<br/>
-					<% if @resource.tags.size > 1 %>
+					<% if @tags_available.size > 1 %>
 						<input id="new_tag" type="hidden" placeholder="Nuevo tag" name="new_tag"></input>
 					<% else %>
 						<input id="new_tag" type="text" placeholder="Nuevo tag" name="new_tag"></input>
-					<% end %>
-					<button type="submit" name="create">Tagear</button>
+					<% end %>					
+					<div id="edit_tag_div" style="display:none">
+						<input id="edit_tag" type="text" placeholder="Cambiar tag por..." name="edit_tag"></input>
+						<button id="edit_btn" type="submit" name="edit">Cambiar Tag</button>
+					</div>				
+					<div id="taggear_div" style="display:block">
+						<button type="submit" name="create">Tagear</button>
+					</div>
 				</div>
 			<% end %>
 			<br/>
@@ -58,10 +85,14 @@ function hide_new_tag(){
 	<div class="ca-button">
 	    <a href="<%= admin_resources_path %>">Atrás</a>
 	</div>
+	<% if puede "Crear Recurso" %>
 	<div class="ca-button">
 	    <a href="<%= new_admin_resource_path %>">Nuevo recurso</a>
 	</div>
+	<% end %>
+	<% if puede "Ver Recurso" %>
 	<div class="ca-button">
 	    <a href="<%= @resource.file_url %>" target="_blank">Ver recurso</a>
 	</div>
+	<% end %>
 </div>

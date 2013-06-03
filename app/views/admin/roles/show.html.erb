@@ -1,0 +1,41 @@
+<div class="page-title">
+    <div class="row">
+        <div class="contact-us contact-form  span3">
+        </div>
+        <div class="contact-form login-form span7">
+            <h2>Permisos de <%= @role.name%></h2>
+            <hr/>
+            <%= form_tag({:action => 'add_permissions', :controller => 'admin/permissions'}) do %>
+              <table>
+                <tr>
+                  <td style="width: 30%">
+                    <% @perms1[0].each do |per| %>
+                      <% if !per.nil? %>
+                        <label class="checkbox">
+                          <input type="checkbox" name="role[permissions_list][<%=per.id%>]"
+                          <%= 'checked' if (@current_perms.include? per.id)%>><%= per.name %>
+                        </label>
+                      <% end %>
+                    <% end %>
+                  </td>
+                  <td style="width: 30%; vertical-align: top">
+                  <% @perms1[1].each do |per| %>
+                      <% if !per.nil? %>
+                        <label class="checkbox">
+                        <input type="checkbox" name="role[permissions_list][<%=per.id%>]" 
+                        <%= 'checked' if (@current_perms.include? per.id)%>><%= per.name %>
+                      <% end %>
+                    </label>                  
+                  <% end %>
+
+                  </td>
+                </tr>
+              </table>
+              <% if puede "Modificar Rol" %>
+              <button class="mine" type="submit" name="actualizar" style="margin-left: 30px;">Actualizar</button>
+              <% end %>
+              <button class="mine" type="submit" name="atras">Atrás</button>
+            <% end %>
+        </div>
+    </div>
+</div>

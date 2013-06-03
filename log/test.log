@@ -1,0 +1,92 @@
+Connecting to database specified by database.yml
+Unable to load admin_test, underlying cause No such file to load -- admin_test 
+
+ /usr/local/rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.13/lib/active_support/dependencies.rb:317:in `rescue in depend_on'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.13/lib/active_support/dependencies.rb:312:in `depend_on'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.13/lib/active_support/dependencies.rb:225:in `require_dependency'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:767:in `try_to_load_dependency'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:782:in `block in require_fixture_classes'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:779:in `each'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:779:in `require_fixture_classes'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:762:in `fixtures'
+/home/nestor/Escritorio/RubyOnRails/regionsps/test/test_helper.rb:10:in `<class:TestCase>'
+/home/nestor/Escritorio/RubyOnRails/regionsps/test/test_helper.rb:5:in `<top (required)>'
+/home/nestor/Escritorio/RubyOnRails/regionsps/test/unit/helpers/events_helper_test.rb:1:in `require'
+/home/nestor/Escritorio/RubyOnRails/regionsps/test/unit/helpers/events_helper_test.rb:1:in `<top (required)>'
+/usr/local/rvm/gems/ruby-1.9.3-p392@global/gems/rake-10.0.4/lib/rake/rake_test_loader.rb:10:in `require'
+/usr/local/rvm/gems/ruby-1.9.3-p392@global/gems/rake-10.0.4/lib/rake/rake_test_loader.rb:10:in `block (2 levels) in <main>'
+/usr/local/rvm/gems/ruby-1.9.3-p392@global/gems/rake-10.0.4/lib/rake/rake_test_loader.rb:9:in `each'
+/usr/local/rvm/gems/ruby-1.9.3-p392@global/gems/rake-10.0.4/lib/rake/rake_test_loader.rb:9:in `block in <main>'
+/usr/local/rvm/gems/ruby-1.9.3-p392@global/gems/rake-10.0.4/lib/rake/rake_test_loader.rb:4:in `select'
+/usr/local/rvm/gems/ruby-1.9.3-p392@global/gems/rake-10.0.4/lib/rake/rake_test_loader.rb:4:in `<main>'
+Unable to load admin/resource, underlying cause No such file to load -- admin/resource 
+
+ /usr/local/rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.13/lib/active_support/dependencies.rb:317:in `rescue in depend_on'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.13/lib/active_support/dependencies.rb:312:in `depend_on'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.13/lib/active_support/dependencies.rb:225:in `require_dependency'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:767:in `try_to_load_dependency'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:782:in `block in require_fixture_classes'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:779:in `each'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:779:in `require_fixture_classes'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:762:in `fixtures'
+/home/nestor/Escritorio/RubyOnRails/regionsps/test/test_helper.rb:10:in `<class:TestCase>'
+/home/nestor/Escritorio/RubyOnRails/regionsps/test/test_helper.rb:5:in `<top (required)>'
+/home/nestor/Escritorio/RubyOnRails/regionsps/test/unit/helpers/events_helper_test.rb:1:in `require'
+/home/nestor/Escritorio/RubyOnRails/regionsps/test/unit/helpers/events_helper_test.rb:1:in `<top (required)>'
+/usr/local/rvm/gems/ruby-1.9.3-p392@global/gems/rake-10.0.4/lib/rake/rake_test_loader.rb:10:in `require'
+/usr/local/rvm/gems/ruby-1.9.3-p392@global/gems/rake-10.0.4/lib/rake/rake_test_loader.rb:10:in `block (2 levels) in <main>'
+/usr/local/rvm/gems/ruby-1.9.3-p392@global/gems/rake-10.0.4/lib/rake/rake_test_loader.rb:9:in `each'
+/usr/local/rvm/gems/ruby-1.9.3-p392@global/gems/rake-10.0.4/lib/rake/rake_test_loader.rb:9:in `block in <main>'
+/usr/local/rvm/gems/ruby-1.9.3-p392@global/gems/rake-10.0.4/lib/rake/rake_test_loader.rb:4:in `select'
+/usr/local/rvm/gems/ruby-1.9.3-p392@global/gems/rake-10.0.4/lib/rake/rake_test_loader.rb:4:in `<main>'
+Connecting to database specified by database.yml
+Unable to load admin_test, underlying cause No such file to load -- admin_test 
+
+ /usr/local/rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.13/lib/active_support/dependencies.rb:317:in `rescue in depend_on'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.13/lib/active_support/dependencies.rb:312:in `depend_on'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.13/lib/active_support/dependencies.rb:225:in `require_dependency'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:767:in `try_to_load_dependency'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:782:in `block in require_fixture_classes'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:779:in `each'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:779:in `require_fixture_classes'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:762:in `fixtures'
+/home/nestor/Escritorio/RubyOnRails/regionsps/test/test_helper.rb:10:in `<class:TestCase>'
+/home/nestor/Escritorio/RubyOnRails/regionsps/test/test_helper.rb:5:in `<top (required)>'
+/home/nestor/Escritorio/RubyOnRails/regionsps/test/functional/events_controller_test.rb:1:in `require'
+/home/nestor/Escritorio/RubyOnRails/regionsps/test/functional/events_controller_test.rb:1:in `<top (required)>'
+/usr/local/rvm/gems/ruby-1.9.3-p392@global/gems/rake-10.0.4/lib/rake/rake_test_loader.rb:10:in `require'
+/usr/local/rvm/gems/ruby-1.9.3-p392@global/gems/rake-10.0.4/lib/rake/rake_test_loader.rb:10:in `block (2 levels) in <main>'
+/usr/local/rvm/gems/ruby-1.9.3-p392@global/gems/rake-10.0.4/lib/rake/rake_test_loader.rb:9:in `each'
+/usr/local/rvm/gems/ruby-1.9.3-p392@global/gems/rake-10.0.4/lib/rake/rake_test_loader.rb:9:in `block in <main>'
+/usr/local/rvm/gems/ruby-1.9.3-p392@global/gems/rake-10.0.4/lib/rake/rake_test_loader.rb:4:in `select'
+/usr/local/rvm/gems/ruby-1.9.3-p392@global/gems/rake-10.0.4/lib/rake/rake_test_loader.rb:4:in `<main>'
+Unable to load admin/resource, underlying cause No such file to load -- admin/resource 
+
+ /usr/local/rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.13/lib/active_support/dependencies.rb:317:in `rescue in depend_on'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.13/lib/active_support/dependencies.rb:312:in `depend_on'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activesupport-3.2.13/lib/active_support/dependencies.rb:225:in `require_dependency'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:767:in `try_to_load_dependency'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:782:in `block in require_fixture_classes'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:779:in `each'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:779:in `require_fixture_classes'
+/usr/local/rvm/gems/ruby-1.9.3-p392/gems/activerecord-3.2.13/lib/active_record/fixtures.rb:762:in `fixtures'
+/home/nestor/Escritorio/RubyOnRails/regionsps/test/test_helper.rb:10:in `<class:TestCase>'
+/home/nestor/Escritorio/RubyOnRails/regionsps/test/test_helper.rb:5:in `<top (required)>'
+/home/nestor/Escritorio/RubyOnRails/regionsps/test/functional/events_controller_test.rb:1:in `require'
+/home/nestor/Escritorio/RubyOnRails/regionsps/test/functional/events_controller_test.rb:1:in `<top (required)>'
+/usr/local/rvm/gems/ruby-1.9.3-p392@global/gems/rake-10.0.4/lib/rake/rake_test_loader.rb:10:in `require'
+/usr/local/rvm/gems/ruby-1.9.3-p392@global/gems/rake-10.0.4/lib/rake/rake_test_loader.rb:10:in `block (2 levels) in <main>'
+/usr/local/rvm/gems/ruby-1.9.3-p392@global/gems/rake-10.0.4/lib/rake/rake_test_loader.rb:9:in `each'
+/usr/local/rvm/gems/ruby-1.9.3-p392@global/gems/rake-10.0.4/lib/rake/rake_test_loader.rb:9:in `block in <main>'
+/usr/local/rvm/gems/ruby-1.9.3-p392@global/gems/rake-10.0.4/lib/rake/rake_test_loader.rb:4:in `select'
+/usr/local/rvm/gems/ruby-1.9.3-p392@global/gems/rake-10.0.4/lib/rake/rake_test_loader.rb:4:in `<main>'
+  [1m[36m (2.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "roles"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "roles" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2013-06-01 05:55:36', '2013-06-01 05:55:36', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "roles" ("name", "created_at", "updated_at", "id") VALUES ('MyString', '2013-06-01 05:55:36', '2013-06-01 05:55:36', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "resources"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "resources" ("filename", "content_type", "file", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2013-06-01 05:55:36', '2013-06-01 05:55:36', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "resources" ("filename", "content_type", "file", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2013-06-01 05:55:36', '2013-06-01 05:55:36', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "admin_tests"
+SQLite3::SQLException: no such table: admin_tests: DELETE FROM "admin_tests"
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m

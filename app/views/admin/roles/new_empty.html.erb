@@ -1,0 +1,23 @@
+<div class="page-title">
+    <div class="row">
+        <div class="contact-us contact-form  span3">
+        </div>
+        <div class=" contact-us contact-form login-form span7">
+            <h2>Nuevo rol</h2>
+            <hr/>            
+            <%= form_for [:admin, @role], :url=>{:action => 'create_empty'} do |f| %>
+	              <div class="name">
+	                <%= f.label :name, 'Rol*', :class => 'nameLabel' %>
+	                <%= f.text_field :name, :placeholder => 'Ingrese nombre del rol...' %>
+	              </div>
+	              <div class="name">
+	                <%= f.label :description, 'Descripción*', :class => 'nameLabel' %>
+	                <%= f.text_field :description, :placeholder => 'Descripción del rol...' %>
+	              </div>
+                  <p>*Dato obligatorio</p><br/>
+              	  <button type="submit" name="create">Crear</button>         
+                  <button type="submit" name="cancel">Cancelar</button>            	
+            <% end %>
+        </div>
+    </div>
+</div>

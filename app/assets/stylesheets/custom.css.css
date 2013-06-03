@@ -101,3 +101,57 @@ p {
     text-justify:inter-word;
     margin-right: 15px
 }
+
+div.margin-div{
+    margin-left: 20px;
+}
+
+input.check_box_item{
+    color: red;
+}
+label.checkbox{
+    margin-left: 30px;
+}
+
+
+button.mine {
+    width: 120px;
+    height: 30px;
+    margin-top: 15px;
+    background: #9d426b;
+    border: 0;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    color: #fff;
+    -moz-box-shadow:
+        0 1px 25px 0 rgba(0,0,0,.05) inset,
+        0 -1px 25px 0 rgba(0,0,0,.05) inset;
+    -webkit-box-shadow:
+        0 1px 25px 0 rgba(0,0,0,.05) inset,
+        0 -1px 25px 0 rgba(0,0,0,.05) inset;
+    box-shadow:
+        0 1px 25px 0 rgba(0,0,0,.05) inset,
+        0 -1px 25px 0 rgba(0,0,0,.05) inset;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    -ms-transition: all .3s;
+}
+
+button.mine:hover {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+button.mine:active {
+    -moz-box-shadow:
+        0 5px 10px 0 rgba(0,0,0,.15) inset,
+        0 -1px 25px 0 rgba(0,0,0,.05) inset;
+    -webkit-box-shadow:
+        0 5px 10px 0 rgba(0,0,0,.15) inset,
+        0 -1px 25px 0 rgba(0,0,0,.05) inset;
+    box-shadow:
+        0 5px 10px 0 rgba(0,0,0,.15) inset,
+        0 -1px 25px 0 rgba(0,0,0,.05) inset;
+}
