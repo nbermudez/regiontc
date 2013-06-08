@@ -2,7 +2,8 @@ require 'digest'
 class User < ActiveRecord::Base
   attr_accessor :password, :password_old
   attr_accessible :email, :first_name, :last_name, :password, 
-                  :password_confirmation, :encrypted_password, :password_old
+                  :password_confirmation, :encrypted_password, :password_old,
+                  :phone, :stake
 
   has_and_belongs_to_many :roles, :join_table => "users_roles"
   has_many :permissions, :through => :roles

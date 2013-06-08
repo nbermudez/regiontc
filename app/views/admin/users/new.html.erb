@@ -24,6 +24,14 @@
                     <%= f.label :password_confirmation, 'Confirmar contraseña*', :class => 'nameLabel' %>
                     <%= f.password_field :password_confirmation, :placeholder => 'Repita su contraseña...' %>
                   </div>
+                  <div class="name">
+                    <%= f.label :phone, 'Teléfono*' %>
+                    <%= f.text_field :phone, :placeholder => 'Ingrese su número de teléfono...', :autocomplete => "off" %>
+                  </div>
+                  <div class="name">
+                    <%= f.label :stake, 'Estaca*' %>
+                    <%= f.text_field :stake, :autocomplete => "off" %>
+                  </div>
                 <br/>
                 <p>*Dato obligatorio</p><br/>
                 <button type="submit" name="create">Registrar</button>

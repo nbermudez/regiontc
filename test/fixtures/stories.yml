@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  report: MyString
+  year: 1
+  stake: MyString
+  abstract: MyText
+
+two:
+  report: MyString
+  year: 1
+  stake: MyString
+  abstract: MyText

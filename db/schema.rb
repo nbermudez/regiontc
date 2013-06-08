@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130602185711) do
+ActiveRecord::Schema.define(:version => 20130608044447) do
 
   create_table "permissions", :force => true do |t|
     t.string   "name"
@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(:version => 20130602185711) do
     t.integer  "user_id"
   end
 
+  create_table "stories", :force => true do |t|
+    t.string   "report"
+    t.integer  "year"
+    t.string   "stake"
+    t.text     "abstract"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "tags", :force => true do |t|
     t.string   "title"
     t.integer  "resource_id"
@@ -60,6 +69,8 @@ ActiveRecord::Schema.define(:version => 20130602185711) do
     t.string   "salt"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.string   "stake"
+    t.string   "phone"
   end
 
   create_table "users_roles", :id => false, :force => true do |t|

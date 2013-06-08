@@ -25,7 +25,7 @@
 								<% end %>
 							</td>
 							<td>
-								<% if puede "Eliminar rol" %>
+								<% if puede "Eliminar Rol" %>
 								<%= link_to 'Eliminar',  admin_roles_update_path(u.name), :method => :delete,
 							 :data => { :confirm => '¿Seguro que desea eliminar este archivo?' } %>
 							 	<% end %>
