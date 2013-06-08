@@ -35,7 +35,7 @@ function display_edit(){
 			<table id="hor-minimalist-b">
 				<thead>
 					<tr>
-						<th scope="col">Tags</th>
+						<th scope="col">Tópicos</th>
 						<th scope="col"></th>
 					</tr>
 				</thead>
@@ -56,7 +56,7 @@ function display_edit(){
 			<hr>
 			<%= form_for [:admin, @resource, @resource.tags.build] do |f| %>
 				<div class="name">
-					<%= f.label :title, "Tag" %>
+					<%= f.label :title, "Tópico" %>
 					<%= f.select :title, options_for_select(@tags_available.push("Nuevo tag")), {},
 					{:onChange => "if(this.value == 'Nuevo tag') show_new_tag();else hide_new_tag();"} %>
 					<% if puede("Modificar Tag") %>

@@ -1,3 +1,4 @@
+# encoding: utf-8
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -6,13 +7,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create(:email=>"nestor.bermudez@unitec.edu", :first_name => "Nestor",
+User.create!(:email=>"nestor.bermudez@unitec.edu", :first_name => "Nestor",
 	:last_name=>"Bermudez", :password => "Girardot8", 
-	:password_confirmation => "Girardot8")
+	:password_confirmation => "Girardot8", :phone => "Not available",
+	:stake => "NONE")
 
-User.create(:email=>"jared.ocampo@unitec.edu", :first_name => "Jared",
+User.create!(:email=>"jared.ocampo@unitec.edu", :first_name => "Jared",
 	:last_name=>"Ocampo", :password => "jocampo", 
-	:password_confirmation => "jocampo")
+	:password_confirmation => "jocampo", :phone => "Not available",
+	:stake => "San Pedro Sula")
 
 
 Permission.create(:name => "Crear Usuario", :description => "No description available")
@@ -40,3 +43,12 @@ Permission.create(:name => "Modificar Rol", :description => "No description avai
 Permission.create(:name => "Eliminar Rol", :description => "No description available")
 Permission.create(:name => "Ver Rol", :description => "No description available")
 Permission.create(:name => "Asignar Rol", :description => "No description available")
+
+Permission.create(:name => "Eliminar Grupo", :description => "No description available")
+Permission.create(:name => "Crear Grupo", :description => "No description available")
+Permission.create(:name => "Modificar Grupo", :description => "No description available")
+Permission.create(:name => "Ver Grupo", :description => "No description available")
+Permission.create(:name => "Asignar Grupo", :description => "No description available")
+
+Group.create(:name => "Líderes de Estaca")
+Group.create(:name => "Secretarios")

@@ -30,7 +30,7 @@
                   </div>
                   <div class="name">
                     <%= f.label :stake, 'Estaca*' %>
-                    <%= f.text_field :stake, :autocomplete => "off" %>
+                    <%= f.select :stake, options_for_select(Rails.configuration.stakes) %>
                   </div>
                 <br/>
                 <p>*Dato obligatorio</p><br/>

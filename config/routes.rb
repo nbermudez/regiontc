@@ -17,6 +17,7 @@ Regionsps::Application.routes.draw do
     end
     resources :users do
       resources :roles, :except => [:index, :show]
+      resources :groups, :except => [:index, :show]
     end    
     resources :events
     resources :roles, :only => [:index]    

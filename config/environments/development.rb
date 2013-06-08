@@ -1,3 +1,4 @@
+# encoding: utf-8
 Regionsps::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -35,7 +36,7 @@ Regionsps::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  #config.stakes = ["San Pedro Sula", "Valle de Sula", "Merendón", "Fesitranh", 
-  #  "Villanueva", "La Ceiba", "La Lima", "El Progreso",
-  #   "Santa Rosa", "Olanchito", "Satélite"]
+  config.stakes = ["San Pedro Sula", "Valle de Sula", "Merendón", "Fesitranh", 
+    "Villanueva", "La Ceiba", "La Lima", "El Progreso",
+     "Santa Rosa", "Olanchito", "Satélite"]
 end

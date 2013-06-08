@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130608044447) do
+ActiveRecord::Schema.define(:version => 20130608172632) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "groups", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "permissions", :force => true do |t|
     t.string   "name"
@@ -61,6 +73,11 @@ ActiveRecord::Schema.define(:version => 20130608044447) do
 
   add_index "tags", ["resource_id"], :name => "index_tags_on_resource_id"
 
+  create_table "tags_category", :id => false, :force => true do |t|
+    t.integer "tag_id"
+    t.integer "category_id"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "first_name"
@@ -71,6 +88,11 @@ ActiveRecord::Schema.define(:version => 20130608044447) do
     t.datetime "updated_at",         :null => false
     t.string   "stake"
     t.string   "phone"
+  end
+
+  create_table "users_groups", :id => false, :force => true do |t|
+    t.integer "user_id"
+    t.integer "group_id"
   end
 
   create_table "users_roles", :id => false, :force => true do |t|
