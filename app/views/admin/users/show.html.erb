@@ -76,11 +76,11 @@
 		<% end %>
 
 		<!-- TODO: agrupar usuarios!-->
-		<% if puede "Agrupar Usuario" %>
+		<% if puede "Asignar Grupo" %>
 		<%= link_to 'Editar grupos', new_admin_user_group_path(@user.id) %>
 		<% end %>
 
-		<% if puede("Asignar Rol") %>
+		<% if puede "Asignar Rol" %>
 	    <%= link_to 'Editar roles', new_admin_user_role_path(@user.id) %>
 		<% end %>	
 
