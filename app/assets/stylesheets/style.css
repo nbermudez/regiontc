@@ -17,10 +17,10 @@ body {
     font-size: 12px;
 }
 
-.violet { color: #9d426b; }
+.violet { color: #2a3753; }
 
 a {
-    color: #9d426b;
+    color: #3b4b6d;
     text-decoration: none;
     -o-transition: all .3s;
     -moz-transition: all .3s;
@@ -78,12 +78,12 @@ strong { font-weight: bold; }
 
 .header ul.nav li.current-page a {
     padding-top: 25px;
-    border-bottom: 5px solid #9d426b;
+    border-bottom: 5px solid #3b4b6d;
     background: #f8f8f8;
 }
 
 .header ul.nav li a:hover {
-    background: #9d426b;
+    background: #3b4b6d;
     color: #fff;
 }
 
@@ -172,7 +172,7 @@ strong { font-weight: bold; }
 .what-we-do .service {
     padding-bottom: 23px;
     background: #f8f8f8;
-    border-bottom: 2px solid #9d426b;
+    border-bottom: 2px solid #3b4b6d;
 }
 
 .what-we-do .service:hover {
@@ -209,7 +209,7 @@ strong { font-weight: bold; }
 
 .what-we-do .service a {
     padding: 5px 22px;
-    background: #9d426b;
+    background: #3b4b6d;
     color: #fff;
     font-style: italic;
     text-decoration: none;
@@ -266,7 +266,7 @@ strong { font-weight: bold; }
     margin-top: 40px;
     padding-bottom: 20px;
     background: #f8f8f8;
-    border-bottom: 2px solid #9d426b;
+    border-bottom: 2px solid #3b4b6d;
 }
 
 .portfolio .work:hover img {
@@ -297,7 +297,7 @@ strong { font-weight: bold; }
 .portfolio .work .icon-awesome a {
     display: inline-block;
     padding: 5px 9px;
-    background: #9d426b; 
+    background: #3b4b6d; 
     color: #fff;
     -moz-border-radius: 19px;
     -webkit-border-radius: 19px;
@@ -407,7 +407,7 @@ strong { font-weight: bold; }
 }
 
 .testimonial-list .nav-tabs li a:hover { border: 0; background: #ddd; }
-.testimonial-list .nav-tabs li.active a { background: #9d426b; }
+.testimonial-list .nav-tabs li.active a { background: #3b4b6d; }
 
 
 /* ----- Footer ----- */
@@ -628,7 +628,7 @@ footer .social a:hover { background-position: left top; }
     margin-top: 40px;
     padding-bottom: 20px;
     background: #f8f8f8;
-    border-bottom: 2px solid #9d426b;
+    border-bottom: 2px solid #3b4b6d;
 }
 
 .team-text:hover img {
@@ -758,7 +758,7 @@ footer .social a:hover { background-position: left top; }
     width: 120px;
     height: 30px;
     margin-top: 15px;
-    background: #9d426b;
+    background: #3b4b6d;
     border: 0;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     font-size: 13px;
@@ -910,7 +910,7 @@ footer .social a:hover { background-position: left top; }
 
 .call-to-action-text .ca-button a {
     padding: 5px 22px;
-    background: #9d426b;
+    background: #3b4b6d;
     color: #fff;
     text-decoration: none;
     -moz-box-shadow:
@@ -982,9 +982,9 @@ ul.portfolio-img li {
 }
 
 .filter-portfolio a { color: #5d5d5d; text-decoration: none; }
-.filter-portfolio a:hover { color: #9d426b; text-decoration: none; }
+.filter-portfolio a:hover { color: #3b4b6d; text-decoration: none; }
 
-.filter-portfolio a#active-imgs { color: #9d426b; }
+.filter-portfolio a#active-imgs { color: #3b4b6d; }
 .filter-portfolio a#active-imgs:hover { color: #5d5d5d; }
 
 /* --------- Login ---------*/

@@ -1,7 +1,7 @@
 class StoriesController < ApplicationController
 	def index
 		@current_page = "HISTORIAS"
-		@stories = Story.all
+		@stories = Story.order("year ASC")
 		@stakes = Rails.configuration.stakes
 		@years = []
 		@stories.each do |t|

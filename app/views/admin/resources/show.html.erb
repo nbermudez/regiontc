@@ -70,10 +70,10 @@ function display_edit(){
 					<% end %>					
 					<div id="edit_tag_div" style="display:none">
 						<input id="edit_tag" type="text" placeholder="Cambiar tag por..." name="edit_tag"></input>
-						<button id="edit_btn" type="submit" name="edit">Cambiar Tag</button>
+						<button id="edit_btn" type="submit" name="edit">Cambiar tópico</button>
 					</div>				
 					<div id="taggear_div" style="display:block">
-						<button type="submit" name="create">Tagear</button>
+						<button type="submit" name="create">Agregar tópico</button>
 					</div>
 				</div>
 			<% end %>
@@ -92,7 +92,7 @@ function display_edit(){
 	<% end %>
 	<% if puede "Ver Recurso" %>
 	<div class="ca-button">
-	    <a href="<%= @resource.file_url %>" target="_blank">Ver recurso</a>
+	    <a href="<%= @resource.file_url %>" target="_blank">Descargar recurso</a>
 	</div>
 	<% end %>
 </div>

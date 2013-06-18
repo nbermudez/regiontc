@@ -22,7 +22,7 @@
                   </div>
                   <div class="name">
                     <%= f.label :year, 'Año*' %>
-                    <%= f.number_field :year, :placeholder => 'Ingrese el año...' %>
+                    <%= f.select :year, options_for_select(years_til_now)%>
                   </div>
                   <div class"name">
                     <label>Archivo (PDF)*</label>

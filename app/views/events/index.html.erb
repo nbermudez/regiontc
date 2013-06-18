@@ -3,7 +3,7 @@
         <div class="row">
             <div class="span12">
                 <i class="icon-calendar page-title-icon"></i>
-                <h2>Eventos</h2>				
+                <h2>Actividades y Reuniones</h2>				
             </div>
         </div>
     </div>
@@ -11,12 +11,14 @@
 
 <div class="what-we-do container">
 	<div class="row">
+		<% count = 0 %>
 		<% if @groups.any? %>
 		<ul style="clear:both">			
 			<% @groups.each do |g| %>
 			<% if Invitation.where(:group_id => g.id).any? %>
-			<li style="list-style-type:none;">				
-				<h3>Eventos para <%= g.name %></h3>
+			<li style="list-style-type:none;">		
+				<% count = 1 %>		
+				<h3>Actividades y reuniones para <%= g.name %></h3>
 				<% Invitation.where(:group_id => g.id).each do |i| %>
 				<div class="span7 testimonial-list">
 					<% ev = Event.find(i.event_id) %>
@@ -27,7 +29,7 @@
                         <br />
                         <span class="violet">Lugar: </span><%= ev.place %>
                         <br />
-                        <span class="violet">Fecha y hora: </span><%= ev.celebrated_at %>
+                        <span class="violet">Fecha y hora: </span><%= l ev.celebrated_at, :format => :long %>
                     </p>
 				</div>				
 				<% end %>				
@@ -39,7 +41,7 @@
 	</div>
 	<div class="row">
 		<% if @public_events.any? %>
-			<h3>Eventos públicos</h3>
+			<h3>Actividades y reuniones</h3>
 			<ul style="clear:both">
 				<% @public_events.each do |ev| %>
 				<li style="list-style-type:none;">
@@ -51,15 +53,17 @@
 		                    <br />
 		                    <span class="violet">Lugar: </span><%= ev.place %>
 		                    <br />
-		                    <span class="violet">Fecha y hora: </span><%= ev.celebrated_at %>
+		                    <span class="violet">Fecha y hora: </span><%= l ev.celebrated_at, :format => :db %>
 		                </p>
 					</div>	
 				</li>
 				<% end %>
 			</ul>
 		<% else %>
+			<% if count != 1 %>
 			<h2>No se han programado eventos.</h2>
         	<h3>Esté pendiente, gracias.</h3>
+        	<% end %>
 		<% end %>	
 		</div>
 	<br/>
