@@ -10,6 +10,7 @@
 </div>
 <div class="what-we-do container">
 	<div class="row">
+        <% if @tags.any? %>
         <% @tags.each do |t| %>
         <div class="service span3">
             <div class="icon-awesome">
@@ -18,7 +19,11 @@
             <h4><%= t.title %></h4>
             <a href="<%= recursos_f_path(t.title)%>">Ver recursos</a>
         </div>
-        <% end %>		
+        <% end %>	
+        <% else %>
+        <h2>Aún no hay recursos disponibles.</h2>
+        <h3>Por favor sea paciente, estamos trabajando en ello.</h3>
+        <% end %>	
 	</div>
 	<br/>
 	<br/>

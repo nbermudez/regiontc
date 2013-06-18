@@ -1,1 +1,56 @@
-index de admin/events
+<div class="page-title">
+    <div class="row">
+    	<div class="contact-form span3"></div>        
+        <div class=" contact-us contact-form login-form span7">
+			<% if @events.any? %>
+				<h3 style="margin-left:40%;">Eventos</h3>
+				<hr/>
+				<table id="hor-minimalist-b">
+					<thead>
+						<tr>
+							<th scope="col">Fecha</th>
+							<th scope="col">Lugar</th>
+							<th scope="col">Ocasión</th>
+							<th scope="col"></th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody>
+					<% @events.each do |u| %>
+						<tr>
+							<td><%= u.celebrated_at %></td>
+							<td><%= u.place %></td>
+							<td><%= link_to u.name, admin_event_path(u) %></td>
+							<td>
+								<% if puede("Eliminar Evento") %>
+								<%= link_to (image_tag('file_delete.png', :size =>'15x15')), admin_event_path(u), :method => :delete, :data => { :confirm => '¿Esta seguro?' }%>
+								<% end %>
+							</td>
+							<td>
+								<% if puede("Modificar Evento") %>
+								<%= link_to (image_tag('file_edit.png', :size =>'15x15')), edit_admin_event_path(u)%>
+								<% end %>
+							</td>
+						</tr>
+					<% end %>
+					</tbody>
+				</table>
+			<% else %>
+				<h2>No hay eventos registrados aún.</h2>
+			<% end %>
+			<br/>
+			<br/>
+		</div>
+	</div>
+</div>
+
+<div class="call-to-action-text ">
+	<div class="ca-button">
+	    <a href="<%= admin_path %>">Atrás</a>
+	</div>
+	<% if puede "Crear Evento" %>
+	<div class="ca-button">
+	    <a href="<%= new_admin_event_path %>">Nuevo evento</a>
+	</div>
+	<% end %>
+</div>

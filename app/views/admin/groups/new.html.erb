@@ -32,7 +32,7 @@ function hide_new_group(){
 					<tr>
 						<td><%= u.name %></td>
 						<td>
-							<% if puede("Eliminar Grupo") || true%>
+							<% if puede "Eliminar Grupo"%>
 							<%= link_to (image_tag('file_delete.png', :size =>'15x15')), admin_user_group_path(@user, u), :method => :delete, :data => { :confirm => '¿Esta seguro?' }%>
 							<% end %>
 						</td>
@@ -50,10 +50,10 @@ function hide_new_group(){
             <%= form_for [:admin, @user, @user.groups.build] do |f| %>
             	<div class="name">
             		<h3>Agregar grupo:</h3>
-        			<%= f.select :name_select, options_for_select(@groups_available), {},
+        			<%= f.select :name_selected, options_for_select(@groups_available), {},
         			{:onChange => "if(this.value == 'Nuevo grupo') show_new_group();else hide_new_group();"}%>
         		</div>
-            	<div id="new_group_div" style="display:none">
+            	<div id="new_group_div" style="display:<%if @groups_available.size == 1 %>block<%else%>none<%end%>">
 	              <div class="name">
 	                <%= f.label :name, 'Grupo*', :class => 'nameLabel' %>
 	                <%= f.text_field :name, :placeholder => 'Ingrese nombre del grupo...' %>
@@ -62,7 +62,7 @@ function hide_new_group(){
                   <button type="submit" name="create">Crear</button>                
                   <button type="submit" name="cancel">Cancelar</button>
             	</div>
-            	<div id="asignar_div" style="display:block">
+            	<div id="asignar_div" style="display:<%if @groups_available.size == 1 %>none<%else%>block<%end%>">
 					<button type="submit" name="asignar">Asignar</button>
 				</div>           	
             	

@@ -36,6 +36,8 @@ Regionsps::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  config.testing = true
+
   config.stakes = ["San Pedro Sula", "Valle de Sula", "Merendón", "Fesitranh", 
     "Villanueva", "La Ceiba", "La Lima", "El Progreso",
      "Santa Rosa", "Olanchito", "Satélite"]

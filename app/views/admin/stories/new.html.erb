@@ -1,0 +1,43 @@
+<div class="page-title">
+    <div class="row">
+        <div class="contact-form span3"></div>
+        <div class=" contact-us contact-form login-form span7">
+            <h2>Registro de nueva historia</h2>
+            <%if @story.errors.any? %>
+              <ul>
+                <% @story.errors.messages.each do |e| %>
+                  <li class="error-item"><%= e[1][0] %></li>
+                <% end %>
+              </ul>
+            <% end %>
+            <hr/>
+            <%= form_for [:admin, @story], :html => {:multipart => true} do |f| %>
+                  <div class="name">
+                    <%= f.label :stake, 'Estaca*' %>
+                    <%= f.select :stake, options_for_select(Rails.configuration.stakes) %>
+                  </div>
+                  <div class="name">
+                    <%= f.label :abstract, 'Resumen' %>
+                    <%= f.text_area :abstract, :placeholder => 'Resumen de la historia (250 caracteres máximo)...' %>
+                  </div>
+                  <div class="name">
+                    <%= f.label :year, 'Año*' %>
+                    <%= f.number_field :year, :placeholder => 'Ingrese el año...' %>
+                  </div>
+                  <div class"name">
+                    <label>Archivo (PDF)*</label>
+                    <div class="FileUpload" id="FileUpload">
+                        <input type="file" size="24" class="BrowserHidden" id="BrowserHidden" onchange="getElementById('FileField').value = getElementById('BrowserHidden').value;" name="story[report]"/>
+                        <div class="BrowserVisible" id="BrowserVisible">
+                            <input type="text" class="FileField" id="FileField" />
+                        </div>
+                    </div>
+                  </div>
+                <br/>
+                <p>*Dato obligatorio</p><br/>
+                <button type="submit" name="create">Registrar</button>
+                <button type="submit" name="cancel">Cancelar</button>
+            <% end %>
+        </div>
+    </div>
+</div>

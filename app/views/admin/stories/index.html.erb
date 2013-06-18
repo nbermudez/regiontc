@@ -1,0 +1,52 @@
+<div class="page-title">
+    <div class="row">
+    	<div class="contact-form span2"></div>        
+        <div class=" contact-us contact-form login-form span9">
+			<% if @stories.any? %>
+				<h3 style="margin-left:33%;">Historias de Estaca</h3>
+				<hr/>
+				<table id="hor-minimalist-b">
+					<thead>
+						<tr>
+							<th scope="col">Estaca</th>
+							<th scope="col">Año</th>
+							<th scope="col">Archivo</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody>
+					<% @stories.each do |u| %>
+						<tr>
+							<td><%= u.stake %></td>
+							<td><%= u.year %></td>
+							<td>
+								<a href="<%= u.report_url%>" class="chuckit" target="_blank">Ver</a>
+							</td>
+							<td>
+								<% if puede "Modificar Historia" %>
+								<%= link_to (image_tag('file_delete.png', :size =>'15x15')), admin_story_path(u), :method => :delete, :data => { :confirm => '¿Esta seguro?' }%>
+								<% end %>
+							</td>
+						</tr>
+					<% end %>
+					</tbody>
+				</table>
+			<% else %>
+				<h2>No se han subido historias aún.</h2>
+			<% end %>
+			<br/>
+			<br/>
+		</div>
+	</div>
+</div>
+
+<div class="call-to-action-text ">
+	<div class="ca-button">
+	    <a href="<%= admin_path %>">Atrás</a>
+	</div>
+	<% if puede "Crear Historia" %>
+	<div class="ca-button">
+	    <a href="<%= new_admin_story_path %>">Nueva historia</a>
+	</div>
+	<% end %>
+</div>

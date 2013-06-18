@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   include ApplicationHelper
 
   def testing
-  	true
+  	Rails.configuration.testing
   end
 end

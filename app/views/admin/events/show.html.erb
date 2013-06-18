@@ -1,0 +1,72 @@
+<div class="page-title">
+    <div class="row">
+    	<br/>
+    	<div class="contact-form span" style="margin-left:65px"></div>    
+    	<div class="contact-us contact-form login-form span4">
+    		<br/>
+        	<h2>Grupos invitados</h2>
+            <hr/>
+        	<% if @invs.any? %>
+			<table id="hor-minimalist-c">
+				<thead>
+					<tr>
+						<th scope="col">Grupo</th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+				<% @invs.each do |u| %>
+					<% if !u.name.nil? %>
+					<tr>
+						<td><%= u.name %></td>
+						<td>
+							<% if puede "Eliminar Grupo"%>
+							<%= link_to (image_tag('file_delete.png', :size =>'15x15')), admin_uninvite_path(@event.id, u.id), :method => :delete, :data => { :confirm => '¿Esta seguro?' }%>
+							<% end %>
+						</td>
+					</tr>
+					<% end %>
+				<% end %>
+				</tbody>
+			</table>
+			<% else %>
+				<p>Aun no tiene grupos asociados</p>
+			<% end %>
+        </div>    
+        <div class=" contact-us contact-form login-form span7">
+        	<br/>
+			<h2>Detalles de: <%= @event.name %></h2>
+			<hr/>
+			<div class="margin-div">
+				<h5>
+					Lugar: <span class="violet"><%= @event.place%></span>
+				</h5>
+				<% if puede "Ver Telefono" %>
+				<h5>
+					Fecha y Hora: <span class="violet"><%= @event.celebrated_at%></span>
+				</h5>
+				<% end %>
+				<h5>
+					Descripción: <span class="violet"><%= @event.description%></span>
+				</h5>		
+				<hr/>
+				<h2>Invitar</h2>
+				<%= form_tag do |f| %>
+					<%= select_tag 'invite_group', options_from_collection_for_select(@to_inv, "id", "name")%>
+					<br/>	
+					<button type="submit" name="invite">Invitar</button>
+				<% end %>		
+			</div>
+			<hr/>
+
+			<br/>
+			<br/>
+		</div>
+	</div>
+</div>
+
+<div class="call-to-action-text ">
+	<div class="ca-button">	
+		<a href="<%= admin_events_path %>">Atrás</a>
+	</div>
+</div>

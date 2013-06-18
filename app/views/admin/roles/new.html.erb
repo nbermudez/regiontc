@@ -53,7 +53,7 @@ function hide_new_role(){
         			<%= f.select :name_select, options_for_select(@roles_available), {},
         			{:onChange => "if(this.value == 'Nuevo rol') show_new_role();else hide_new_role();"}%>
         		</div>
-            	<div id="new_role_div" style="display:none">
+            	<div id="new_role_div" style="display:<%if @roles_available.size == 1 %>block<%else%>none<%end%>">
 	              <div class="name">
 	                <%= f.label :name, 'Rol*', :class => 'nameLabel' %>
 	                <%= f.text_field :name, :placeholder => 'Ingrese nombre del rol...' %>
@@ -66,7 +66,7 @@ function hide_new_role(){
                   <button type="submit" name="create">Crear</button>                
                   <button type="submit" name="cancel">Cancelar</button>
             	</div>
-            	<div id="asignar_div" style="display:block">
+            	<div id="asignar_div" style="display:<%if @roles_available.size == 1 %>none<%else%>block<%end%>">
 					<button type="submit" name="asignar">Asignar</button>
 				</div>           	
             	

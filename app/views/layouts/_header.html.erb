@@ -20,6 +20,7 @@
                                 >
                                     <a href="/"><i class="icon-home"></i><br />Inicio</a>
                                 </li>
+                                <% unless current_user.nil? %>
                                 <li
                                 <% if @current_page == "EVENTOS" %>
                                     class="current-page"
@@ -27,6 +28,7 @@
                                 >
                                     <a href="/events"><i class="icon-calendar"></i><br />Eventos</a>
                                 </li>
+                                <% end %>
                                 <li
                                 <% if @current_page == "RECURSOS" %>
                                     class="current-page"
@@ -39,7 +41,14 @@
                                     class="current-page"
                                 <%end %>
                                 >
-                                    <a href="/nosotros"><i class="icon-user"></i><br />Nosotros</a>
+                                    <a href="/nosotros"><i class="icon-fire"></i><br />Nosotros</a>
+                                </li>
+                                <li
+                                <% if @current_page == "HISTORIAS" %>
+                                    class="current-page"
+                                <%end %>
+                                >
+                                    <a href="/historias"><i class="icon-book"></i><br />Historias</a>
                                 </li>
                                 <li
                                 <% if @current_page == "ADMIN" %>
@@ -48,6 +57,7 @@
                                 >
                                     <a href="/admin"><i class="icon-signin"></i><br />Administrar</a>
                                 </li>
+                                
                             </ul>
                         </div>
                     </div>

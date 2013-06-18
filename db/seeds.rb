@@ -49,6 +49,20 @@ Permission.create(:name => "Crear Grupo", :description => "No description availa
 Permission.create(:name => "Modificar Grupo", :description => "No description available")
 Permission.create(:name => "Ver Grupo", :description => "No description available")
 Permission.create(:name => "Asignar Grupo", :description => "No description available")
+Permission.create(:name => "Ver Telefono", :description => "No description available")
+
+Permission.create(:name => "Ver Historia", :description => "No description available")
+Permission.create(:name => "Eliminar Historia", :description => "No description available")
+Permission.create(:name => "Modificar Historia", :description => "No description available")
+Permission.create(:name => "Crear Historia", :description => "No description available")
+
+Role.create(:name => "Administrador")
 
 Group.create(:name => "Líderes de Estaca")
 Group.create(:name => "Secretarios")
+
+
+Story.create(:stake => "Estaca Ejemplo", :year => 2012)
+
+Event.create(:name => "Mi cumpleaños", :description => "Cumplo 22 años, por lo que hay que celebrar!",
+	:place=>"Casa de Gerardo", :celebrated_at => Time.now)

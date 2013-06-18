@@ -5,7 +5,9 @@ class SessionsController < ApplicationController
     else
       sign_in user
     end
+    @current_page = "ADMIN"
   	render :action => 'admin'
+
   end
 
   def admin

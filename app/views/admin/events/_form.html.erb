@@ -1,0 +1,44 @@
+<%= form_for [:admin, @event] do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @event.errors.messages.each do |e| %>
+        <li class="error-item"><%= e[1][0] %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, "Ocasión" %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :place, "Lugar" %>
+    <%= f.text_field :place %>
+  </div>
+
+  <div class="field">
+    <%= f.label :celebrated_at, "Fecha y Hora" %>
+    <%= f.datetime_select :celebrated_at %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description, "Descripción" %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div>
+    <%= f.label :is_public, "Tipo" %>
+    <%= f.select :is_public, options_for_select([["Privado", 0],["Público", 1]]) %>
+  </div>
+
+  <div class="actions">
+    <% if @event.new_record? %>
+      <button type="submit" name="create">Crear evento</button>
+    <% else %>
+      <button type="submit" name="create">Actualizar evento</button>
+    <% end %>
+  </div>
+<% end %>

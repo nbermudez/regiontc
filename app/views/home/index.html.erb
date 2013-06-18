@@ -31,14 +31,19 @@
                                 <li class="current-page">
                                     <a href="/"><i class="icon-home"></i><br />Inicio</a>
                                 </li>
+                                <% unless current_user.nil? %>
                                 <li>
                                     <a href="events"><i class="icon-calendar"></i><br />Eventos</a>
                                 </li>
+                                <% end %>
                                 <li>
                                     <a href="recursos"><i class="icon-folder-open"></i><br />Recursos</a>
                                 </li>
                                 <li>
-                                    <a href="nosotros"><i class="icon-user"></i><br />Nosotros</a>
+                                    <a href="nosotros"><i class="icon-fire"></i><br />Nosotros</a>
+                                </li>
+                                <li>
+                                    <a href="historias"><i class="icon-book"></i><br />Historias</a>
                                 </li>
                                 <li>
                                     <a href="admin"><i class="icon-signin"></i><br />Administrar</a>
@@ -57,8 +62,8 @@
                     <div class="flexslider">
                         <ul class="slides">
                             <li data-thumb="assets/galery/family.jpg">
-                                <a href="events" target="_blank"><img src="assets/galery/family.jpg"></a>
-                                <p class="flex-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur.<a style="text-width: bold" href="<%= admin_path %>"> [Ver Articulo]</a></p>
+                                <a href="<%= articles_family_is_the_most_important_path %>" target="_blank"><img src="assets/galery/family.jpg"></a>
+                                <p class="flex-caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur.<a style="text-width: bold" href="<%= articles_family_is_the_most_important_path %>" target="_blank"> [Ver Articulo]</a></p>
                             </li>
                             <li data-thumb="assets/galery/study.jpg">
                                 <img src="assets/galery/study.jpg">
@@ -90,28 +95,33 @@
         </div>
         <div class="row">
             <div class="testimonial-list">
+                <% if @events.any? %>
                 <div class="tabbable tabs-below">
                     <div class="tab-content">
-                        <div class="tab-pane active" id="A">
-                            <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur..."<br /><span class="violet">Lorem Ipsum, dolor.co.uk</span></p>
+                        <% @events.each_with_index do |e, i|%>
+                        <div class="tab-pane <% if i == 0 %>active<%end %>" id="<%= e.id %>">                            
+                            <p>
+                                <strong><%= e.name %></strong>
+                                <br/>
+                                <%= e.description %>
+                                <br />
+                                <span class="violet">Lugar: </span><%= e.place %>
+                                <br />
+                                <span class="violet">Fecha y hora: </span><%= e.celebrated_at %>
+                            </p>
                         </div>
-                        <div class="tab-pane" id="B">
-                            <p>"Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat..."<br /><span class="violet">Minim Veniam, nostrud.com</span></p>
-                        </div>
-                        <div class="tab-pane" id="C">
-                            <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur..."<br /><span class="violet">Lorem Ipsum, dolor.co.uk</span></p>
-                        </div>
-                        <div class="tab-pane" id="D">
-                            <p>"Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat..."<br /><span class="violet">Minim Veniam, nostrud.com</span></p>
-                        </div>
+                        <% end %>                  
                     </div>
+
                    <ul class="nav nav-tabs">
-                       <li class="active"><a href="#A" data-toggle="tab"></a></li>
-                       <li class=""><a href="#B" data-toggle="tab"></a></li>
-                       <li class=""><a href="#C" data-toggle="tab"></a></li>
-                       <li class=""><a href="#D" data-toggle="tab"></a></li>
+                    <% @events.each_with_index do |e, i| %>
+                    <li class="<% if i == 0 %>active<% end %>"><a href="#<%= e.id%>" data-toggle="tab"></a></li>
+                    <% end %>
                    </ul>
                </div>
+               <% else %>
+                    <h4 style="margin-left: 42%">No hay eventos próximos.</h4>
+               <% end %>
             </div>
         </div>
     </div>

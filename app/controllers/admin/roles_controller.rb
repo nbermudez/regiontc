@@ -33,7 +33,14 @@ class Admin::RolesController < AdminController
 			tmp.each do |t|
 				@roles_available.push(t.name)
 			end
+			tmp2 = @user.roles
+			current_roles = []
+			tmp2.each do |t|
+				current_roles.push(t.name)
+			end
+
 			@roles_available.push("Nuevo rol")
+			@roles_available = @roles_available - current_roles
 		else
 			redirect_to access_denied_path
 		end

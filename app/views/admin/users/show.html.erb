@@ -12,23 +12,56 @@
 				<h5>
 					Correo: <span class="violet"><%= @user.email%></span>
 				</h5>
-				
-			</div>
-			<% if puede "Ver Rol" %>
-			<div class="margin-div">
-				<h4>Roles</h4>
-				<hr/>
-				<% if @user.roles.any? %>
-				<ul>
-					<% @user.roles.each do |role| %>
-					<li><%= role.name %></li>
-					<% end %>
-				</ul>
-				<% else %>
-					<em>Aun no tiene roles asignados</em><br/>
+				<% if puede "Ver Telefono" %>
+				<h5>
+					Teléfono: <span class="violet"><%= @user.phone%></span>
+				</h5>
 				<% end %>
+				<h5>
+					Estaca: <span class="violet"><%= @user.stake%></span>
+				</h5>				
 			</div>
-			<% end %>
+			<hr/>
+			<table>
+				<tr>
+					<% if puede "Ver Rol" %>
+					<td style="vertical-align:top;">
+						<div class="margin-div-user">
+							<h4>Roles</h4>
+							<hr/>
+							<% if @user.roles.any? %>
+							<ul>
+								<% @user.roles.each do |role| %>
+								<li><%= role.name %></li>
+								<% end %>
+							</ul>
+							<% else %>
+								<em>Aun no tiene roles asignados</em><br/>
+							<% end %>
+						</div>
+					</td>
+					<% end %>
+					<% if puede "Ver Grupo" %>
+					<td style="vertical-align:top;">
+						<div class="margin-div-user">
+							<h4>Grupos</h4>
+							<hr/>
+							<% if @user.groups.any? %>
+							<ul>
+								<% @user.groups.each do |group| %>
+								<li><%= group.name %></li>
+								<% end %>
+							</ul>
+							<% else %>
+								<em>Aun no tiene grupos asignados</em><br/>
+							<% end %>
+						</div>
+					</td>
+					<% end %>
+				</tr>
+			</table>
+			
+			
 			<br/>
 			<br/>
 		</div>
@@ -42,17 +75,17 @@
 		:data => { :confirm => '¿Seguro que desea eliminar este usuario?' } %>
 		<% end %>
 
+		<!-- TODO: agrupar usuarios!-->
+		<% if puede "Agrupar Usuario" %>
+		<%= link_to 'Editar grupos', new_admin_user_group_path(@user.id) %>
+		<% end %>
+
 		<% if puede("Asignar Rol") %>
 	    <%= link_to 'Editar roles', new_admin_user_role_path(@user.id) %>
 		<% end %>	
 
 	    <% if current_user.id == @user.id %>
 	    <%= link_to 'Cambiar contraseña', edit_admin_user_path(@user.id) %>
-		<% end %>
-
-		<!-- TODO: agrupar usuarios!-->
-		<% if puede "Agrupar Usuario" %>
-		<%= link_to 'Grupos', new_admin_user_group_path(@user.id) %>
 		<% end %>
 
 		<a href="<%= admin_users_path %>">Atrás</a>

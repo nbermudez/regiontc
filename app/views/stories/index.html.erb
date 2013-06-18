@@ -1,0 +1,51 @@
+<div class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <i class="icon-book page-title-icon"></i>
+                <h2>Historias de Estaca</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio portfolio-page container">
+    <div class="row">
+        <div class="portfolio-navigator span12">
+            <h5 class="filter-portfolio" style="text-align: left; margin-left: 30px;">
+                Filtrado por estaca: 
+                <a class="all" id="active-imgs" href="#">Todos</a> /
+                <% @stakes.each do |s| %>
+                <a class="<%= no_spaces s %>" id="" href="#"><%= s %></a> /
+                <% end %>
+            </h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="portfolio-navigator span12">
+            <h5 class="filter-portfolio" style="text-align: left; margin-left: 30px;">
+                Filtrado por año: 
+                <a class="all" id="active-imgs" href="#">Todos</a> /
+                <% @years.each do |s| %>
+                <a class="<%= s %>" id="" href="#"><%= s %></a> /
+                <% end %>
+            </h5>
+        </div>
+    </div>
+    <div class="row">
+        <ul class="portfolio-img">
+            <% @stories.each do |s| %>
+            <li data-id="<%= s.id%>" data-type="<%= no_spaces s.stake %> <%= s.year %>">
+                <div class="work span2">
+                    <h4><%= s.stake %>:  <%= s.year %></h4>
+                    <!--<p>Resumen: <%= s.abstract %></p>-->
+                    <div class="icon-awesome">
+                        <a href="<%= s.report_url%>" target="_blank" style = "margin-left: -9px;">
+                            <i class="icon-search"></i>                            
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <% end %>
+        </ul>
+    </div>
+</div>

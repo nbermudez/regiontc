@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :permissions, :through => :roles
   has_and_belongs_to_many :groups, :join_table => "users_groups"
   accepts_nested_attributes_for :roles
+  accepts_nested_attributes_for :groups
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
