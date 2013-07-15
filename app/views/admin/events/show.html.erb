@@ -43,7 +43,8 @@
 				</h5>
 				<% if puede "Ver Telefono" %>
 				<h5>
-					Fecha y Hora: <span class="violet"><%= @event.celebrated_at%></span>
+					Fecha y Hora: <span class="violet">
+					<%= l @event.celebrated_at, :format => :long%></span>
 				</h5>
 				<% end %>
 				<h5>

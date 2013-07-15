@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130615175636) do
+ActiveRecord::Schema.define(:version => 20130628014825) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -80,6 +80,20 @@ ActiveRecord::Schema.define(:version => 20130615175636) do
     t.text     "abstract"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "tag_categorizations", :id => false, :force => true do |t|
+    t.integer  "tag_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "taggings", :id => false, :force => true do |t|
+    t.integer  "resource_id"
+    t.integer  "tag_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "tags", :force => true do |t|

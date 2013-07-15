@@ -166,3 +166,22 @@ li.error-item{
     margin-left: 20px;
     font-style: italic;
 }
+
+select .event_celebrated_at_3i{
+    width: 30px;
+}
+
+/*
+--------------------------------------------------------------------------------
+*/
+
+#article{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#article #title{
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-size: 28pt;
+}

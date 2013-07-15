@@ -10,7 +10,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name, "Ocasión" %>
+    <%= f.label :name, "Actividad" %>
     <%= f.text_field :name %>
   </div>
 
@@ -38,7 +38,7 @@
     <% if @event.new_record? %>
       <button type="submit" name="create" style="width: 220px;">Crear actividad/reunión</button>
     <% else %>
-      <button type="submit" name="create">Actualizar actividad/reunión</button>
+      <button type="submit" name="create" style="width: 220px;">Actualizar actividad/reunión</button>
     <% end %>
   </div>
 <% end %>

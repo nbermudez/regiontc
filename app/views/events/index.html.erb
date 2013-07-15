@@ -29,7 +29,8 @@
                         <br />
                         <span class="violet">Lugar: </span><%= ev.place %>
                         <br />
-                        <span class="violet">Fecha y hora: </span><%= l ev.celebrated_at, :format => :long %>
+                        <span class="violet">Fecha y hora: </span>
+                        <%= l ev.celebrated_at, :format => :long %>
                     </p>
 				</div>				
 				<% end %>				
@@ -53,7 +54,8 @@
 		                    <br />
 		                    <span class="violet">Lugar: </span><%= ev.place %>
 		                    <br />
-		                    <span class="violet">Fecha y hora: </span><%= l ev.celebrated_at, :format => :db %>
+		                    <span class="violet">Fecha y hora: </span>
+		                    <%= l ev.celebrated_at, :format => :long %>
 		                </p>
 					</div>	
 				</li>

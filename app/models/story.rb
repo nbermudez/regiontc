@@ -6,6 +6,6 @@ class Story < ActiveRecord::Base
 
   validates :stake, :presence => {:message => "Debe especificar una estaca"}
   validates :year, :presence => {:message => "Debe ingresar un año"}
-  validates :report, :presence => true
+  validates :report, :presence => {:message => "Seleccione un archivo"}
   validates :abstract, :length => {:maximum => 250}
 end

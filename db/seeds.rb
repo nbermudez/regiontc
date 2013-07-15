@@ -56,6 +56,11 @@ Permission.create(:name => "Eliminar Historia", :description => "No description 
 Permission.create(:name => "Modificar Historia", :description => "No description available")
 Permission.create(:name => "Crear Historia", :description => "No description available")
 
+Permission.create(:name => "Ver Categoria", :description => "No description available")
+Permission.create(:name => "Eliminar Categoria", :description => "No description available")
+Permission.create(:name => "Modificar Categoria", :description => "No description available")
+Permission.create(:name => "Crear Categoria", :description => "No description available")
+
 Role.create(:name => "Administrador")
 
 Group.create(:name => "Líderes de Estaca")
@@ -65,4 +70,8 @@ Group.create(:name => "Secretarios")
 Story.create(:stake => "Estaca Ejemplo", :year => 2012)
 
 Event.create(:name => "Mi cumpleaños", :description => "Cumplo 22 años, por lo que hay que celebrar!",
-	:place=>"Casa de Gerardo", :celebrated_at => Time.now)
+	:place=>"Casa de Gerardo", :is_public => 1, :celebrated_at => Time.now)
+
+Tag.create(:title => "GENERAL")
+Category.create(:name => "GENERAL")
+TagCategorization.create(:tag_id => 1, :category_id => 1)

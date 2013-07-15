@@ -1222,6 +1222,22 @@ input[type="file"] {
 
   line-height: 30px;
 }
+select[id="event_celebrated_at_3i"] {
+  width: 70px;
+}
+
+select[id="event_celebrated_at_1i"] {
+  width: 100px;
+}
+
+select[id="event_celebrated_at_4i"] {
+  width: 70px;
+}
+
+select[id="event_celebrated_at_5i"] {
+  width: 70px;
+}
+
 select {
   width: 220px;
   border: 1px solid #cccccc;

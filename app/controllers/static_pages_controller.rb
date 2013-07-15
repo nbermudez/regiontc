@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
 		@current_page = "NOSOTROS"
 	end	
 
-	def error_page
+	def articulo1
+		render :layout => "articles"
 	end
 end

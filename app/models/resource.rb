@@ -1,7 +1,6 @@
 class Resource < ActiveRecord::Base
 	attr_accessible :filename, :content_type, :file, :tags_attributes, :thumbnail, :description
 
-	has_many :tags
 	mount_uploader :file, FileUploader
 	mount_uploader :thumbnail, ImageUploader
 
@@ -9,6 +8,15 @@ class Resource < ActiveRecord::Base
 	validates :filename, :presence => true
 	validates :file, :presence => true
 	validates :description, :presence => true
+
+	def tags
+		tmp = Array.new
+		tags = Tagging.where(:resource_id => self.id)
+		tags.each do |t|
+			tmp.push(t.tag_id)
+		end
+		return Tag.where('id in (?)', tmp)
+	end
 
 	private
 		def fillout

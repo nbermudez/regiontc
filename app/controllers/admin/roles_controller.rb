@@ -72,10 +72,14 @@ class Admin::RolesController < AdminController
 			perms = Permission.all
 			@perms1 = perms.in_groups(2)
 			@role = Role.find_by_name(params[:name])
-			tmp = @role.permissions.all
-			@current_perms = Array.new
-			tmp.each do |t|
-				@current_perms.push(t.id)
+			if @role.nil?
+				redirect_to admin_roles_path
+			else			
+				tmp = @role.permissions.all
+				@current_perms = Array.new
+				tmp.each do |t|
+					@current_perms.push(t.id)
+				end
 			end
 		end
 	end

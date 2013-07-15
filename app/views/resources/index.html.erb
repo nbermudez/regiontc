@@ -3,7 +3,7 @@
         <div class="row">
             <div class="span12">
                 <i class="icon-folder-open page-title-icon"></i>
-                <h2>Recursos</h2>
+                <h2><%= @path_recursos %></h2>
             </div>
         </div>
     </div>
@@ -17,7 +17,7 @@
                 <i class="icon-folder-open"></i>
             </div>
             <h4><%= t.title %></h4>
-            <a href="<%= recursos_f_path(t.title)%>">Ver recursos</a>
+            <a href="<%= recursos_t_path(@category, t.id)%>">Ver recursos</a>
         </div>
         <% end %>	
         <% else %>
@@ -27,4 +27,11 @@
 	</div>
 	<br/>
 	<br/>
+</div>
+
+
+<div class="call-to-action-text ">
+    <div class="ca-button">
+        <a href="<%= recursos_path %>">Atrás</a>
+    </div>
 </div>

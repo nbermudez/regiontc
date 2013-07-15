@@ -20,7 +20,7 @@
             </div>
             <h4>Usuarios</h4>
             <p>Le permite crear, modificar y eliminar usuarios así como asignarles roles. Solo los usuarios tendrán acceso a la administración del sitio.</p>
-            <a href="/admin/users">Administrar</a>
+            <a href="<%= admin_users_path %>">Administrar</a>
 		</div>
         <% end %>
         <% if puede "Ver Rol" %>
@@ -30,7 +30,7 @@
             </div>
             <h4>Roles</h4>
             <p>Le permite administrar los roles del sistema (crear, modificar, eliminar). También podrá asociarles permisos a cada rol.</p>
-            <a href="/admin/roles">Administrar</a>
+            <a href="<%= admin_roles_path %>">Administrar</a>
         </div>
         <% end %>
         <% if puede "Ver Recurso" %>
@@ -40,7 +40,7 @@
             </div>
             <h4>Recursos</h4>
             <p>Podrá subir recursos, decidir si seran públicos o privados. Los recursos pueden categorizarse para hacer más fácil su ubicación</p>
-            <a href="/admin/recursos">Administrar</a>
+            <a href="<%= admin_resources_path %>">Administrar</a>
         </div>
         <% end %>
         <% if puede "Ver Evento" %>
@@ -50,7 +50,7 @@
             </div>
             <h4>Actividades/Reuniones</h4>
             <p>Usado para crear eventos y darlos de baja, además le permite seleccionar grupos de interes para asistir a dichos eventos.</p>
-            <a href="/admin/events">Administrar</a>            
+            <a href="<%= admin_events_path %>">Administrar</a>            
         </div>
         <% end %>
         <% if puede "Ver Historia" %>
@@ -63,6 +63,16 @@
             <%= link_to 'Administrar', admin_stories_path %>
         </div>
         <% end %>
+        <% if puede "Ver Categoria" %>
+        <div class="service span3">
+            <div class="icon-awesome">
+                <i class="icon-list"></i>
+            </div>
+            <h4>Categorias</h4>
+            <p>Permite agrupar los tópicos en categorias.<br/>&nbsp;</p>
+            <%= link_to 'Administrar', admin_categories_path %>
+        </div>
+        <% end %>
         <% if puede "ALLMIGHTY" %>
         <div class="service span3">
             <div class="icon-awesome">
@@ -70,9 +80,9 @@
             </div>
             <h4>ADMIN TOOLS</h4>
             <p>Usted no debería estar viendo esto. <br/>Solo para Néstor Bermúdez</p>
-            <%= link_to 'Administrar', admin_stories_path %>
+            <%= link_to 'Administrar', root_path %>
         </div>
-        <% end %>
+        <% end %>        
 	</div>
 	<br/>
 	<br/>

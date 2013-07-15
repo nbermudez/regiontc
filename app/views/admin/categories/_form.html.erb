@@ -1,0 +1,24 @@
+<%= form_for [:admin, @cat] do |f| %>
+  <% if @cat.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @cat.errors.full_messages.each do |e| %>
+        <li class="error-item"><%= e %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, "Categoria" %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <% if @cat.new_record? %>
+      <button type="submit" name="create" style="width: 220px;">Crear categoria</button>
+    <% else %>
+      <button type="submit" name="create" style="width: 220px;">Actualizar categoria</button>
+    <% end %>
+  </div>
+<% end %>

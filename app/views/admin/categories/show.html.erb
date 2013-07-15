@@ -1,0 +1,93 @@
+<script type="text/javascript">
+var var_control = 1, nuevo = 0;
+function display_edit(){ 
+	if (var_control == 1 && nuevo == 0){
+		$('div[id="edit_category"]').each (function() {  this.style['display'] = 'block' });
+		$('a[id="edit_a"]').each (function() {  this.innerText = '[Cancelar]' });
+		var_control = 2;
+	}else{
+		$('div[id="edit_category"]').each (function() {  this.style['display'] = 'none' });
+		$('a[id="edit_a"]').each (function() {  this.innerText = '[Cambiar nombre]' });
+		var_control = 1;
+	}
+}
+</script>
+<div class="page-title">
+    <div class="row">
+    	<div class="contact-form span" style="margin-left:65px"></div>    
+    	<div class="contact-us contact-form login-form span4">
+        	<h2>Tópicos Agregados</h2>
+            <hr/>
+        	<% if @topicos.any? %>
+			<table id="hor-minimalist-c">
+				<thead>
+					<tr>
+						<th scope="col">Tópico</th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+				<% @topicos.each do |u| %>
+					<% if !u.title.nil? %>
+					<tr>
+						<td><%= u.title %></td>
+						<td>
+							<% if puede "Eliminar Categoria"%>
+							<%= link_to (image_tag('file_delete.png', :size =>'15x15')), admin_remove_tag_path(@cat.id, u.id), :method => :delete, :data => { :confirm => '¿Esta seguro?' }%>
+							<% end %>
+						</td>
+					</tr>
+					<% end %>
+				<% end %>
+				</tbody>
+			</table>
+			<% else %>
+				<p>No hay tópicos en esta categoria</p>
+			<% end %>
+        </div>  
+        <div class=" contact-us contact-form login-form span7">
+            <h2>Detalles de categoria</h2>
+            <hr/>
+            <div class="field">
+            	<h4 style="display: inline">Categoria: <%= @cat.name %></h4>
+            	<% if puede("Modificar Categoria")%>
+				<a style="display: inline; vertical-align: top" id="edit_a" href="" onclick="display_edit();return false;">
+					[Cambiar nombre]
+				</a>
+				<% end %>
+            </div>
+			<div id="edit_category" style="display: none;">
+			<%= form_for [:admin, @cat], :method => :put do |f| %>
+				<div class="field">
+				  <%= f.label :name, "Nuevo nombre" %>
+				  <%= f.text_field :name %>
+				</div>
+
+				<div class="actions">
+				    <button type="submit" name="create" style="width: 220px;">Actualizar categoria</button>
+				</div>
+			<% end %>
+			<hr/>
+			</div>
+			<div class="">				
+				<%= form_tag({:action => 'add_tag', :controller => 'admin/categories'}) do |f| %>
+					<% if @to_join.size > 0 %>
+						<h4 style="display: inline">Tópicos</h4>					
+						<%= select_tag 'tag_id', options_from_collection_for_select(@to_join, "id", "title")%>
+						<br/>						
+						<button type="submit" name="invite" style="width: 35%; margin-left: 20px">Agregar a esta categoria</button>
+					<% else %>
+						<em style="margin-left: 20px">No hay más tópicos que agregar.</em>
+					<% end %>
+				<% end %>		
+			</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="call-to-action-text ">
+	<div class="ca-button">
+	    <a href="<%= admin_categories_path %>">Categorias</a>
+	</div>
+</div>
