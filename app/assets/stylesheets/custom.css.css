@@ -185,3 +185,12 @@ select .event_celebrated_at_3i{
     font-weight: normal;
     font-size: 28pt;
 }
+
+a.articulo {
+    color: #A0E9FA;
+    text-decoration: none;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    -ms-transition: all .3s;
+}
