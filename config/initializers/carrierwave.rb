@@ -1,4 +1,4 @@
-
+require 'addressable/uri'
     # Configuration for Amazon S3 should be made available through an Environment variable.
     # For local installations, export the env variable through the shell OR
     # if using Passenger, set an Apache environment variable.
@@ -15,13 +15,14 @@
     # Configuration for Amazon S3
 
 CarrierWave.configure do |config|
+  h = Addressable::URI.parse('https://regionsps_bucket.s3-website-us-east-1.amazonaws.com:8080')
   config.fog_credentials = {
     :provider               => 'AWS',                        # required
     :aws_access_key_id      => ENV['S3_KEY'],                        # required
     :aws_secret_access_key  => ENV['S3_SECRET'],                        # required
     :region                 => ENV['S3_REGION'],                  # optional, defaults to 'us-east-1'
-    :host                   => 'regionsps_bucket.s3-website-us-east-1.amazonaws.com',             # optional, defaults to nil
-    :endpoint               => 'https://regionsps_bucket.s3-website-us-east-1.amazonaws.com:8080' # optional, defaults to nil
+    :host                   => h.host,             # optional, defaults to nil
+    :endpoint               => h# optional, defaults to nil
   }
   config.fog_directory  = ENV['S3_BUCKET_NAME']                    # required
   config.fog_public     = false                                   # optional, defaults to true
