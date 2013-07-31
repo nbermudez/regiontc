@@ -20,7 +20,7 @@ test:
 
 production:
   adapter: postgresql
-  database: nestor
+  database: regionsps
   pool: 5
   timeout: 5000
 

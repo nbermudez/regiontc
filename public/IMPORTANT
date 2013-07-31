@@ -1,0 +1,60 @@
+Chat InformationThank you for contacting us via our chat line. Currently there are 1 visitors waiting, your position is 1.
+
+Chat InformationYou are now chatting with 'Pavel Grivenko'
+
+Pavel Grivenko: Hello, my name is Pavel, how can I assist you today?
+you: Hello! My name is Nestor, I'll have to explain a little before asking what I want so please be patient
+you: I have an application running based on Tumblr, but now I have developed a site in Ruby on Rails
+you: I have enabled Ruby on Rails and disable Php on the manager for my app
+you: and transfered the files via FTP
+you: but when I try to access the site it keeps saying "Application error Rails application failed to start properly""
+you: I've tried some things I found like changing permissions
+you: but I didn't help
+Pavel Grivenko: Could you please provide the domain name?
+you: regionsps.org
+you: but to access the ruby page i've been using http://50.6.49.24/
+you: since I haven't configure my hostname
+Pavel Grivenko: I have requested domain name to find your account.
+you: ok
+Pavel Grivenko: Please clarify, have you enabled Ruby on Rails already?
+you: yes
+Pavel Grivenko: Please hold on, let me check
+you: ok, I wait
+Pavel Grivenko: Handling your request may take a few more minutes. Please stay online
+you: ok
+Pavel Grivenko: I have been looking for error logs, but they are empty and there is no information regarding any errors.
+Pavel Grivenko: I will look into this issue.
+you: Should I wait online or could you send me an email if you find anything of matter?
+you: I'll keep trying by myself, I'm kind of new using your services but I'll try
+you: I have to enter a meeting, I would appreciate if you could send me anything you find to nestor.bermudez@unitec.edu. Thank you in advance. And thank you for your help so far.
+Pavel Grivenko: please create database from your control panel . And go to /hsphere/local/home/moimart/ruby/regionsps.org modify config/database.yml with correct db connection settings for all modes:
+Pavel Grivenko: development:
+Pavel Grivenko: adapter: mysql
+Pavel Grivenko: database: username_ruby (your database name)
+Pavel Grivenko: username: username_ruby (your database username)
+Pavel Grivenko: password: pass (your password)
+Pavel Grivenko: host: mysql1202.hostexcellence.com
+Pavel Grivenko: test:
+Pavel Grivenko: adapter: mysql
+Pavel Grivenko: database: username_ruby (your database name)
+Pavel Grivenko: username: username_ruby (your database username)
+Pavel Grivenko: password: pass (your password)
+Pavel Grivenko: host: mysql1202.hostexcellence.com
+Pavel Grivenko: production:
+Pavel Grivenko: adapter: mysql
+Pavel Grivenko: database: username_ruby (your database name)
+Pavel Grivenko: username: username_ruby (your database username)
+Pavel Grivenko: password: pass (your password)
+Pavel Grivenko: host: mysql1202.hostexcellence.com
+Pavel Grivenko: N.B. Database can be the same for all modes, and can be different if needed.
+Pavel Grivenko: As I have found, you don't actually have databases created.
+Pavel Grivenko: Please modify config/routes.rb so the code will look like this: map.connect ':controller/:action/:id' map.connect ':controller/:action/:id.:format' map.root :controller ? “home” end
+Pavel Grivenko: N.B. by default it ends on:
+Pavel Grivenko: map.connect ':controller/:action/:id'
+Pavel Grivenko: map.connect ':controller/:action/:id.:format'
+Pavel Grivenko: end
+Pavel Grivenko: I can place a ticket for you with explanation for installation if you wish.
+Pavel Grivenko: Where you will find all these instructions available.
+You are not currently in a chat session.
+
+You are not currently in a chat session.
