@@ -7,6 +7,7 @@ class Resource < ActiveRecord::Base
 	#before_save :fillout
 	validates :filename, :presence => true
 	validates :description, :presence => true
+	validates :thumbnail, :presence => true
 
 	def tags
 		tmp = Array.new
