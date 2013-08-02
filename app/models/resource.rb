@@ -1,12 +1,11 @@
 class Resource < ActiveRecord::Base
-	attr_accessible :filename, :content_type, :file, :tags_attributes, :thumbnail, :description
+	attr_accessible :filename, :content_type, :file, :tags_attributes, :thumbnail, :description, :url
 
 	mount_uploader :file, FileUploader
 	mount_uploader :thumbnail, ImageUploader
 
 	#before_save :fillout
 	validates :filename, :presence => true
-	validates :file, :presence => true
 	validates :description, :presence => true
 
 	def tags

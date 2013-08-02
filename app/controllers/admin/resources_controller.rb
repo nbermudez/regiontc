@@ -20,7 +20,9 @@ class Admin::ResourcesController < AdminController
 			redirect_to admin_resources_url
 		else
 			@resource = Resource.new(params[:resource])
-			@resource.content_type = params[:resource][:file].content_type
+			if !params[:resource][:file].nil?
+				@resource.content_type = params[:resource][:file].content_type
+			end
 			if @resource.save
 				t = Tag.find_by_title("GENERAL")
 				if t.nil?
