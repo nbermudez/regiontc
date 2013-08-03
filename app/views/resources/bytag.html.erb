@@ -12,7 +12,7 @@
 						  <tr>
 						    <td rowspan="2" style="width: 200px;">
 						    	<a href="<%= resource_url(u) %>" class="chuckit" target="_blank">
-						    		<% if !image_tag.nil? %>
+						    		<% if !u.thumbnail_url.nil? %>
 										<%= image_tag u.thumbnail_url(:thumb).to_s, :class => 'img-decor', :style => "opacity: 1;" %>
 									<% end %>
 								</a>
