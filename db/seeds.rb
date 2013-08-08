@@ -8,13 +8,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create!(:email=>"nestor.bermudez@unitec.edu", :first_name => "Nestor",
-	:last_name=>"Bermudez", :password => "Girardot8", 
-	:password_confirmation => "Girardot8", :phone => "Not available",
+	:last_name=>"Bermudez", :password => "you_wont_know_my_password", 
+	:password_confirmation => "you_wont_know_my_password", :phone => "Not available",
 	:stake => "NONE")
 
 User.create!(:email=>"jared.ocampo@unitec.edu", :first_name => "Jared",
-	:last_name=>"Ocampo", :password => "jocampo", 
-	:password_confirmation => "jocampo", :phone => "Not available",
+	:last_name=>"Ocampo", :password => "you_wont_know_my_password", 
+	:password_confirmation => "you_wont_know_my_password", :phone => "Not available",
 	:stake => "San Pedro Sula")
 
 
