@@ -1,6 +1,6 @@
 # encoding: utf-8
 class Story < ActiveRecord::Base
-  attr_accessible :abstract, :report, :stake, :year
+  attr_accessible :abstract, :report, :stake, :year, :url
 
   mount_uploader :report, ReportUploader
 
