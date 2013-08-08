@@ -39,9 +39,15 @@
                     <h4><%= s.stake %>:  <%= s.year %></h4>
                     <p>Resumen: <%= s.abstract %></p>
                     <div class="icon-awesome">
+                        <% if  s.url.nil? %>
                         <a href="<%= s.report_url%>" target="_blank" style = "margin-left: -9px;">
                             <i class="icon-search"></i>                            
                         </a>
+                        <% else %>
+                        <a href="<%= s.url%>" target="_blank" style = "margin-left: -9px;">
+                            <i class="icon-search"></i>                            
+                        </a>  
+                        <% end %>
                     </div>
                 </div>
             </li>
