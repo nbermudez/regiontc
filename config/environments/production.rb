@@ -67,7 +67,7 @@ Regionsps::Application.configure do
     address:              'smtp.gmail.com',
     port:                 587,
     user_name:            'nestor.bermudez@unitec.edu',
-    password:             'Girardot8',
+    password:             'potato97783870',
     authentication:       'plain',
     enable_starttls_auto: true  
   }
