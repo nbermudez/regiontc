@@ -20,6 +20,20 @@
                                 >
                                     <a href="/"><i class="icon-home"></i><br />Inicio</a>
                                 </li>
+                                <li
+                                <% if @current_page == "RECURSOS" %>
+                                    class="current-page"
+                                <%end %>
+                                >
+                                    <a href="/recursos"><i class="icon-folder-open"></i><br />Recursos</a>
+                                </li>
+                                <li
+                                <% if @current_page == "HISTORIAS" %>
+                                    class="current-page"
+                                <%end %>
+                                >
+                                    <a href="/historias"><i class="icon-book"></i><br />Historias</a>
+                                </li>
                                 <% unless current_user.nil? %>
                                 <li
                                 <% if @current_page == "EVENTOS" %>
@@ -30,11 +44,11 @@
                                 </li>
                                 <% end %>
                                 <li
-                                <% if @current_page == "RECURSOS" %>
+                                <% if @current_page == "DASHBOARD" %>
                                     class="current-page"
                                 <%end %>
                                 >
-                                    <a href="/recursos"><i class="icon-folder-open"></i><br />Recursos</a>
+                                    <a href="/dashboard"><i class="icon-folder-open"></i><br />Dashboard</a>
                                 </li>
                                 <li
                                 <% if @current_page == "NOSOTROS" %>
@@ -42,14 +56,7 @@
                                 <%end %>
                                 >
                                     <a href="/nosotros"><i class="icon-fire"></i><br />Nosotros</a>
-                                </li>
-                                <li
-                                <% if @current_page == "HISTORIAS" %>
-                                    class="current-page"
-                                <%end %>
-                                >
-                                    <a href="/historias"><i class="icon-book"></i><br />Historias</a>
-                                </li>
+                                </li>                                
                                 <li
                                 <% if @current_page == "ADMIN" %>
                                     class="current-page"

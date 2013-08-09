@@ -12,6 +12,10 @@ Regionsps::Application.routes.draw do
   match '/signin'                => 'sessions#admin', :via => :get
   match '/signout'               => 'sessions#destroy'
   match '/historias'             => 'stories#index', :via => :get
+  match '/dashboard'             => 'static_pages#dashboard'
+  match '/contact_us'            => 'contacts#new', :via => :get, :as => 'contacts'
+  match '/contact_us'            => 'contacts#send_message'
+  match '/message_sent'          => 'contacts#sent'
 
   namespace :admin do
     resources :resources, :path => 'recursos' do
