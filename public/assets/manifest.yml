@@ -31,8 +31,8 @@ line1.jpg: line1-6754197203985466fce7473a4f5b72b7.jpg
 line1/index.jpg: line1-6754197203985466fce7473a4f5b72b7.jpg
 logo.png: logo-0d300854600c653b08d830c76567421d.png
 logo/index.png: logo-0d300854600c653b08d830c76567421d.png
-logo2.png: logo2-5941daf4b848ffe5cbae1d2301d050d7.png
-logo2/index.png: logo2-5941daf4b848ffe5cbae1d2301d050d7.png
+logo2.jpg: logo2-c7341f255efef9cdc117218ad3d2c677.jpg
+logo2/index.jpg: logo2-c7341f255efef9cdc117218ad3d2c677.jpg
 nosotros.jpg: nosotros-eb9291bb4ab8fc0aae6fd450f389e9db.jpg
 nosotros/index.jpg: nosotros-eb9291bb4ab8fc0aae6fd450f389e9db.jpg
 pattern.jpg: pattern-cdff93241e44f2836a2c02f7bb50d98b.jpg
@@ -207,8 +207,8 @@ upload_bg.gif: upload_bg-631278a6b1070d4046ef36764e204a70.gif
 upload_bg/index.gif: upload_bg-631278a6b1070d4046ef36764e204a70.gif
 application.js: application-2a8da3bc4c5d1da2ad829cae0d902e8c.js
 application/index.js: application-2a8da3bc4c5d1da2ad829cae0d902e8c.js
-application.css: application-c65806abadab0585a6b6305c149325bc.css
-application/index.css: application-c65806abadab0585a6b6305c149325bc.css
+application.css: application-78ef020c48356ec5002ca71f73c0f636.css
+application/index.css: application-78ef020c48356ec5002ca71f73c0f636.css
 font-awesome/fontawesome-webfont.eot: font-awesome/fontawesome-webfont-86a6da438b901860c3a54e21f9098bf8.eot
 font-awesome/fontawesome-webfont/index.eot: font-awesome/fontawesome-webfont-86a6da438b901860c3a54e21f9098bf8.eot
 font-awesome/fontawesome-webfont.svg: font-awesome/fontawesome-webfont-c3f3594758768fbb43eae746d18b3b50.svg

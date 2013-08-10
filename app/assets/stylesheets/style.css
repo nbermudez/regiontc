@@ -59,10 +59,11 @@ strong { font-weight: bold; }
 .header a.brand {
     display: inline-block;
     text-indent: -9999px;
-    width: 200px;
-    height: 63px;
+    width: 230px;
+    height: 47px;
     padding: 30px 0;
-    background: url(logo2.png) 20px center no-repeat;
+    background: url(logo2.jpg) 20px center no-repeat;
+    background-size: 200px 90px;
 }
 
 .header ul.nav {
@@ -71,7 +72,7 @@ strong { font-weight: bold; }
 }
 
 .header ul.nav li a {
-    padding: 30px 20px 10px 20px;
+    padding: 30px 20px 30px 20px;
     color: #5d5d5d;
     text-shadow: none;
 }
