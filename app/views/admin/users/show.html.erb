@@ -76,7 +76,7 @@
 		<% end %>
 
 		<!-- TODO: agrupar usuarios!-->
-		<% if (puede "Asignar Grupo") && @user.email != current_user.email %>
+		<% if (puede "Asignar Grupo")  || (current_user.roles.where(:name => "Administrador").any?)  %>
 		<%= link_to 'Editar grupos', new_admin_user_group_path(@user.id) %>
 		<% end %>
 

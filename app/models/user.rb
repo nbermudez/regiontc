@@ -17,7 +17,6 @@ class User < ActiveRecord::Base
                     :uniqueness => true,
                     :format => {:with => email_regex}
   validates :first_name, :presence => true
-  validates :phone, :presence => true
   validates :stake, :presence => true
   validates :last_name, :presence => true
   validates :password , :presence     => true, 
