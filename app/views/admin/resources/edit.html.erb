@@ -4,8 +4,12 @@
         <div class=" contact-us contact-form login-form span7">
             <h2>Editando recurso: <%= @resource.filename%></h2>
             <%= form_for [:admin, @resource], :html => {:multipart => true} do |f| %> 
+                <div class="name">
+                    <%= f.label :position, 'Posición (Orden)', :class => 'nameLabel' %>
+                    <%= f.number_field :position, :placeholder => 'Si no se especifica se usará un número auto incremental...' %>
+                </div>
                 <div class"name">
-                    <%= f.label :url, 'o URL', :class => 'nameLabel' %>
+                    <%= f.label :url, 'URL', :class => 'nameLabel' %>
                     <%= f.text_field :url, :placeholder => 'URL de recurso existente...' %>
                 </div>
                 <div class="name">

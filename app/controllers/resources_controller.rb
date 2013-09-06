@@ -20,7 +20,7 @@ class ResourcesController < ApplicationController
 		@category = params[:c_id]
 
 
-		@resources = tag.resources.order('id desc') unless tag.nil?
+		@resources = tag.resources.order('position desc') unless tag.nil?
 		@tag = tag.title unless tag.nil?
 
 		@ret = "Recursos/#{Category.find(params[:c_id]).name}"
