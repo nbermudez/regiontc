@@ -63,6 +63,23 @@ class Admin::ResourcesController < AdminController
 		end
 	end
 
+	def edit
+		if puede "Modificar Recurso"
+			@resource = Resource.find(params[:id])
+		else
+			redirect_to access_denied_path 
+		end
+	end
+
+	def update
+		@resource = Resource.find(params[:id])
+		if @resource.update_attributes(params[:resource])
+			redirect_to admin_events_path
+		else
+			render :action => "edit"
+		end
+	end
+
 	def destroy
 		if puede "Eliminar Recurso"
 			@resource = Resource.find(params[:id])

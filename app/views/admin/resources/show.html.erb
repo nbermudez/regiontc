@@ -97,4 +97,9 @@ function display_edit(){
 	    <a href="<%= @resource.file_url %>" target="_blank">Descargar recurso</a>
 	</div>
 	<% end %>
+	<% if puede "Modificar Recurso" %>
+	<div class="ca-button">
+	    <a href="<%= edit_admin_resource_path(@resource) %>" target="_blank">Modificar recurso</a>
+	</div>
+	<% end %>
 </div>
