@@ -74,7 +74,7 @@ class Admin::ResourcesController < AdminController
 	def update
 		@resource = Resource.find(params[:id])
 		if @resource.update_attributes(params[:resource])
-			redirect_to admin_events_path
+			redirect_to admin_resource_path
 		else
 			render :action => "edit"
 		end
