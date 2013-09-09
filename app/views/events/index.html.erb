@@ -15,7 +15,6 @@
 		<% if @groups.any? %>
 		<ul style="clear:both">			
 			<% @groups.each do |g| %>
-			<div>
 			<% if Invitation.where(:group_id => g.id).any? %>
 			<li style="list-style-type:none;">		
 				<% count = 1 %>		
@@ -37,7 +36,7 @@
 				<% end %>				
 			</li>		
 			<% end %>
-			</div>			
+			<br/>
 		</ul>
 		<% end %>
 		<% end %>	
