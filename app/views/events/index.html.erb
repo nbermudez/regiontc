@@ -15,7 +15,7 @@
 		<ul style="clear:both">			
 			<% @groups.each do |g| %>
 			<div class="row">
-			<% if Invitation.where(:group_id => g.id).any? %>
+			<% if Invitation.where(:group_id => g.id).joins("LEFT OUTER JOIN events ON invitations.group_id=events.id").where("celebrated_at > ?", 1.day.ago).any? %>
 			<li style="list-style-type:none;">		
 				<% count = 1 %>
 				<h3>Actividades y Reuniones para <%= g.name %></h3>
