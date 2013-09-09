@@ -19,7 +19,7 @@
 			<li style="list-style-type:none;">		
 				<% count = 1 %>
 				<h3>Actividades y Reuniones para <%= g.name %></h3>
-				<% Invitation.where(:group_id => g.id).joins("LEFT OUTER JOIN Event ON Invitation.group_id=Event.id").where("celebrated_at > ?", 1.day.ago).each do |i| %>
+				<% Invitation.where(:group_id => g.id).joins("LEFT OUTER JOIN Event ON invitations.group_id=events.id").where("celebrated_at > ?", 1.day.ago).each do |i| %>
 				<div class="span7 testimonial-list">
 					<% ev = Event.find(i.event_id) %>
 					<p>
