@@ -17,7 +17,8 @@
 			<% @groups.each do |g| %>
 			<% if Invitation.where(:group_id => g.id).any? %>
 			<li style="list-style-type:none;">		
-				<% count = 1 %>		
+				<% count = 1 %>
+				<div>
 				<h3>Actividades y Reuniones para <%= g.name %></h3>
 				<% Invitation.where(:group_id => g.id).each do |i| %>
 				<div class="span7 testimonial-list">
@@ -32,11 +33,11 @@
                         <span class="violet">Fecha y hora: </span>
                         <%= l ev.celebrated_at, :format => :long %>
                     </p>
-				</div>				
-				<% end %>				
-			</li>		
+				</div>
+				<% end %>
+				</div>
+			</li>
 			<% end %>
-			<br/>
 		</ul>
 		<% end %>
 		<% end %>	
