@@ -9,65 +9,10 @@
     </div>
 </div>
 
-<div class="what-we-do container">
-	<div class="row">
-		<% count = 0 %>
-		<% if @groups.any? %>
-		<ul style="clear:both">			
-			<% @groups.each do |g| %>
-			<% if Invitation.where(:group_id => g.id).any? %>
-			<li style="list-style-type:none;">		
-				<% count = 1 %>		
-				<h3>Actividades y Reuniones para <%= g.name %></h3>
-				<% Invitation.where(:group_id => g.id).each do |i| %>
-				<div class="span7 testimonial-list">
-					<% ev = Event.find(i.event_id) %>
-					<p>
-                        <strong> Actividad: <%= ev.name %></strong>
-                        <br/>
-                        <span class="violet">Descripción: </span><%= ev.description %>
-                        <br />
-                        <span class="violet">Lugar: </span><%= ev.place %>
-                        <br />
-                        <span class="violet">Fecha y hora: </span>
-                        <%= l ev.celebrated_at, :format => :long %>
-                    </p>
-				</div>				
-				<% end %>				
-			</li>		
-			<% end %>			
-		</ul>
-		<% end %>
-		<% end %>	
-	</div>
-	<div class="row">
-		<% if @public_events.any? %>
-			<h3>Actividades y Reuniones</h3>
-			<ul style="clear:both">
-				<% @public_events.each do |ev| %>
-				<li style="list-style-type:none;">
-					<div class="span7 testimonial-list">
-						<p>
-		                    <strong> Actividad: <%= ev.name %></strong>
-		                    <br/>
-		                    <span class="violet">Descripción: </span><%= ev.description %>
-		                    <br />
-		                    <span class="violet">Lugar: </span><%= ev.place %>
-		                    <br />
-		                    <span class="violet">Fecha y hora: </span>
-		                    <%= l ev.celebrated_at, :format => :long %>
-		                </p>
-					</div>	
-				</li>
-				<% end %>
-			</ul>
-		<% else %>
-			<% if count != 1 %>
-			<h2>No se han programado eventos.</h2>
-        	<h3>Esté pendiente, gracias.</h3>
-        	<% end %>
-		<% end %>	
+<div class="what-we-do.container">
+    <div class="row">
+    	<br/>
+		<div id='calendar'>
+			<iframe src="https://www.google.com/calendar/embed?title=Eventos%20de%20la%20Iglesia&amp;showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23cccccc&amp;src=secretario%40regionsps.org&amp;color=%232952A3&amp;ctz=America%2FGuatemala" style=" border-width:0 " width="1200" height="600" frameborder="0" scrolling="no"></iframe>
 		</div>
-	<br/>
-	<br/>
 </div>

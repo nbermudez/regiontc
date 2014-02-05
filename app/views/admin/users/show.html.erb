@@ -18,7 +18,13 @@
 				</h5>
 				<% end %>
 				<h5>
-					Estaca: <span class="violet"><%= @user.stake%></span>
+					Capilla: <span class="violet">
+						<% if @user.chapel_id != nil %>
+							<%= Chapel.find(@user.chapel_id).name%>
+						<% else %>
+							No pertenece a alguna capilla en particular
+						<% end %>
+					</span>
 				</h5>				
 			</div>
 			<hr/>
@@ -76,7 +82,7 @@
 		<% end %>
 
 		<!-- TODO: agrupar usuarios!-->
-		<% if (puede "Asignar Grupo") && @user.email != current_user.email %>
+		<% if (puede "Asignar Grupo")  || (current_user.roles.where(:name => "Administrador").any?)  %>
 		<%= link_to 'Editar grupos', new_admin_user_group_path(@user.id) %>
 		<% end %>
 

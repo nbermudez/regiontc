@@ -1,0 +1,40 @@
+<div class="page-title">
+    <div class="row">
+        <div class="contact-form span3"></div>
+        <div class=" contact-us contact-form login-form span7">
+            <h2>Editando recurso: <%= @resource.filename%></h2>
+            <%= form_for [:admin, @resource], :html => {:multipart => true} do |f| %> 
+                <div class="name">
+                    <%= f.label :position, 'Posición (Orden)', :class => 'nameLabel' %>
+                    <%= f.number_field :position, :placeholder => 'Si no se especifica se usará un número auto incremental...' %>
+                </div>
+                <div class"name">
+                    <%= f.label :url, 'URL', :class => 'nameLabel' %>
+                    <%= f.text_field :url, :placeholder => 'URL de recurso existente...' %>
+                </div>
+                <div class="name">
+                    <%= f.label :description, 'Descripción', :class => 'nameLabel' %>
+                    <%= f.text_area :description, :placeholder => 'Descripción del recurso...' %>
+                </div>
+                <div class"name">
+                    <label>Vista previa*</label>
+                    <div class="FileUpload" id="FileUpload2">
+                        <input type="file" size="24" class="BrowserHidden" id="BrowserHidden2" onchange="getElementById('FileField2').value = getElementById('BrowserHidden2').value;" name="resource[thumbnail]"/>
+                        <div class="BrowserVisible">
+                            <input type="text" class="FileField" id="FileField2"/>
+                        </div>
+                    </div>
+                </div>
+                <br/><br/>
+                
+                <button type="submit" name="create">Actualizar recurso</button>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<div class="call-to-action-text ">
+    <div class="ca-button">
+        <a href="<%= admin_resources_path %>">Atrás</a>
+    </div>
+</div>

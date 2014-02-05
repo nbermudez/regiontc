@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+
+  <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+    <Author><%= @user.name %></Author>
+    <Created><%= Time.now %></Created>
+  </DocumentProperties>
+
+  <Styles>
+
+    <Style ss:ID="Default" ss:Name="Normal">
+      <Font ss:FontName="Arial" ss:Size="10" ss:Bold="1"/>
+      <Borders/>
+    </Style>
+
+    <Style ss:ID="HeaderTypeStad">
+      <Interior ss:Color='#FFC100'/>
+    </Style>
+
+    <Style ss:ID="ContentTotalMonth">
+      <Interior ss:Color='#FABF8F'/>
+    </Style>
+
+    <Style ss:ID="ContentGoal">
+      <Interior ss:Color='#C4D79B'/>
+    </Style>
+
+    <Style ss:ID="GoalHeader">
+      <Font ss:Color='#FF0000'/>
+    </Style>
+
+  </Styles>
+
+  <% for j in 1..Time.now.month %>
+
+    <Worksheet ss:Name="sheet">
+      <Table>
+
+        <Row>
+          <Cell></Cell>
+
+          <% @typestads.each do |ts| %>
+            <Cell ss:MergeAcross="2" ss:StyleID="HeaderTypeStad"><Data ss:Type="String"><%= ts.name %></Data></Cell>
+          <% end %>
+        </Row>
+
+        <Row>
+          <Cell><Data ss:Type="String">Nombre del Barrio</Data></Cell>
+          <% @typestads.each do |ts| %>
+            <Cell><Data ss:Type="String">Total Mensual</Data></Cell>
+            <Cell><Data ss:Type="String">Acumulados</Data></Cell>
+            <Cell><Data ss:Type="String">Meta <%= Time.now.year %></Data></Cell>
+          <% end %>
+        </Row>
+
+        <% @chapels.each do |chapel| %>
+          <Row>
+            <Cell><Data ss:Type="String"><%= chapel.name %></Data></Cell>
+            <% @typestads.each do |ts| %>
+              <% @stadistic = Stadistic.where("typestadistic_id = ? and year = ? and chapel_id = ? and month = ?", ts.id, DateTime.now.year, chapel.id, j) %>
+
+              <Cell><Data ss:Type="String">
+                <% if @stadistic.size !=0 %>
+                  <%= @stadistic.first.total %>
+                <% else %>
+                  0
+                <% end %>
+              </Data></Cell>
+
+              <% @collectStad = Stadistic.where("typestadistic_id = ? and month <= ? and year = ? and chapel_id = ?", ts.id, j, DateTime.now.year, chapel.id) %>
+
+              <% @sum = 0 %>
+              <% @collectStad.each do |cs| %>
+                <% @sum = @sum + cs.total %>
+              <% end %>
+
+              <Cell><Data ss:Type="String"><%= @sum %></Data></Cell>
+
+              <% @goal = Goal.where("typestadistic_id = ? and year = ? and chapel_id = ?", ts.id, DateTime.now.year, chapel.id) %>
+
+              <% if @goal.size == 0 %>
+                <Cell><Data ss:Type="String">0</Data></Cell>
+              <% else %>
+                <Cell><Data ss:Type="String"><%= @goal.first.total %></Data></Cell>
+              <% end %>
+
+            <% end %>
+          </Row>
+        <% end %>
+
+      </Table>
+    </Worksheet>
+
+  <% end %>
+</Workbook>

@@ -1,0 +1,1 @@
+page.insert_html :top, :goals, 'index', :object => @goal

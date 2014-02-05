@@ -30,8 +30,8 @@
                     <%= f.text_field :phone, :placeholder => 'Ingrese su número de teléfono...', :autocomplete => "off" %>
                   </div>
                   <div class="name">
-                    <%= f.label :stake, 'Estaca*' %>
-                    <%= f.select :stake, options_for_select(Rails.configuration.stakes) %>
+                    <%= f.label :chapel_id, 'Capilla*' %>
+                    <%= f.collection_select :chapel_id, Chapel.all, :id, :name %>
                   </div>
                 <br/>
                 <p>*Dato obligatorio</p><br/>

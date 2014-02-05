@@ -1,0 +1,62 @@
+.row
+	.call-to-action-text
+		.ca-button
+			- @chapels = Chapel.where("stake_id = ?",@stake.id)
+
+			- @chapels.each do |chapel|
+				%a{href: admin_lastyears_path(chapel.id,@stake.id,@user.id,@year)}= chapel.name
+
+
+	.container{style: "overflow:auto;"}
+		%table
+			%tr
+				%th{rowspan: "14"}
+					= @years[1]
+
+				%th{rowspan: "2"}
+					Meses
+				- @typestads.each do |ts|
+					%th{colspan: "3"}
+						= ts.name
+
+			%tr
+
+				- @typestads.each do |ts|
+					%td
+						Total Mensual
+					%td
+						Acumulado
+					%td
+						Meta 
+						= @years[1]
+
+			- for i in 1..12
+
+				%tr
+					%td= @months[i]
+
+					- @typestads.each do |ts|
+						- @chStad = Stadistic.where("typestadistic_id = ? and month = ? and year = ? and chapel_id = ?",ts.id, i,@years[1], @chapel)
+
+						%td
+							- if @chStad.size==0
+								0
+							- else
+								= @chStad.first.total
+
+						- collectStad = Stadistic.where("typestadistic_id = ? and month <= ? and year = ? and chapel_id = ?", ts.id, i, @years[1], @chapel)
+
+						- sum = 0
+						- collectStad.each do |cs|
+							- sum = sum + cs.total
+
+						%td
+							= sum
+
+						- goal = Goal.where("typestadistic_id = ? and year = ? and chapel_id = ?", ts.id, @years[1], @chapel)
+
+						%td
+							- if goal.size==0
+								0
+							- else
+								= goal.first.total

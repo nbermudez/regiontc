@@ -1,0 +1,69 @@
+.page-title
+	.container
+		.row
+			.span12
+				%i.icon-folder-open.page-title-icon
+				%h2 
+					Metas del Año
+					= @year
+				%br/
+				%h4 
+					= User.find(@user).name 
+					(
+					- User.find(@user).roles.each do |role|
+						= role.name
+
+					)
+				- if User.find(@user).roles.where("name = ?","Secretario de Barrio").any?
+					%h5
+						Barrio 
+						= Chapel.find(User.find(@user).chapel_id).name 
+						en la Estaca 
+						= Stake.find(Chapel.find(User.find(@user).chapel_id).stake_id).name
+				- else
+					%h5
+						Estaca 
+						= Stake.find(Chapel.find(User.find(@user).chapel_id).stake_id).name
+		
+
+		.contact-form.span3
+		.contact-us.contact-form.login-form.span7
+			%h3{style: "margin-left:30%;"}
+				Metas del Año
+				= @year
+
+			- if @goals.first.ableEditing==true
+				%p *Presione ENTER cada vez que agrega un nuevo valor.
+
+			.span12
+				- flash.each do |name, msg|
+					%p= msg
+			
+			%table#hor-minimalist-b
+				%thead
+					%tr
+						%th{scope: "col"} Tipo de Estadística
+						%th{scope: "col"} Meta Establecida
+				%tbody
+					- @goals.each do |goal|
+						= form_for(goal, url: admin_goal_path(goal), remote: true) do |f|
+							%tr
+								%td= Typestadistic.find(goal.typestadistic_id).name
+								- if goal.ableEditing==true
+									%td= f.text_field :total, :url=>{:action => :update}, :frequency => 0.05, :update=>goal, :with => :total
+								- else
+									%td= goal.total
+			%br/
+					
+
+.call-to-action-text
+	.ca-button
+		%a{href: admin_stadistics_path} Volver a mi Dashboard
+
+	- if @sentStake==false
+		.ca-button
+			%a{href: admin_sendToStake_path(@year,@chapel)} Enviar a Estaca
+
+
+
+

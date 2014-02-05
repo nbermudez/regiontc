@@ -9,7 +9,12 @@ gem "carrierwave"
 gem "fog", "~> 1.3.1"
 
 gem 'sqlite3', :group => [:development, :test]
-gem 'pg'
+gem 'pg', :group => [:development, :test]
+
+group :production, :staging do
+  gem 'pg'
+  gem 'rails_12factor'
+end
 
 group :production do
 	gem 'thin'
@@ -21,3 +26,5 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'therubyracer'
+gem "haml-rails"

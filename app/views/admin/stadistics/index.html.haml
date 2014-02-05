@@ -1,0 +1,144 @@
+.page-title
+	.container
+		.row
+			.span12
+				%i.icon-folder-open.page-title-icon
+				%h2
+					Estadísticas del Año 
+					= @year
+				%br/
+				%h4 
+					= @user.name 
+					(
+					- @roles.each do |role|
+						= role.name
+
+					)
+				- if @roles.where("name = ?","Secretario de Barrio").any? || @roles.where("name = ?","Obispo").any?
+					%h5
+						Barrio 
+						= @chapel.name 
+						en la Estaca 
+						= @stake.name
+				- else
+					%h5
+						Estaca 
+						= @stake.name
+
+.what-we-do.container
+	.row
+		- if @roles.where("name = ?","Presidente de Estaca").any? == false
+			- if 1<=Date.today.month
+				.service.span3
+					.icon-awesome
+						%i.icon-folder-open
+					%h4 ENERO
+					%a{href: admin_stadistic_m_path(1, @year, @chapel.id, @stake.id, @user.id)} Ver Estadísticas
+
+			- if 2<=Date.today.month
+				.service.span3
+					.icon-awesome
+						%i.icon-folder-open
+					%h4 FEBRERO
+					%a{href: admin_stadistic_m_path(2, @year, @chapel.id, @stake.id, @user.id)} Ver Estadísticas
+
+			- if 3<=Date.today.month
+				.service.span3
+					.icon-awesome
+						%i.icon-folder-open
+					%h4 MARZO
+					%a{href: admin_stadistic_m_path(3, @year, @chapel.id, @stake.id, @user.id)} Ver Estadísticas
+
+			- if 4<=Date.today.month
+				.service.span3
+					.icon-awesome
+						%i.icon-folder-open
+					%h4 ABRIL
+					%a{href: admin_stadistic_m_path(4, @year, @chapel.id, @stake.id, @user.id)} Ver Estadísticas
+
+			- if 5<=Date.today.month
+				.service.span3
+					.icon-awesome
+						%i.icon-folder-open
+					%h4 MAYO
+					%a{href: admin_stadistic_m_path(5, @year, @chapel.id, @stake.id, @user.id)} Ver Estadísticas
+
+			- if 6<=Date.today.month
+				.service.span3
+					.icon-awesome
+						%i.icon-folder-open
+					%h4 JUNIO
+					%a{href: admin_stadistic_m_path(6, @year, @chapel.id, @stake.id, @user.id)} Ver Estadísticas
+
+			- if 7<=Date.today.month
+				.service.span3
+					.icon-awesome
+						%i.icon-folder-open
+					%h4 JULIO
+					%a{href: admin_stadistic_m_path(7, @year, @chapel.id, @stake.id, @user.id)} Ver Estadísticas
+
+			- if 8<=Date.today.month
+				.service.span3
+					.icon-awesome
+						%i.icon-folder-open
+					%h4 AGOSTO
+					%a{href: admin_stadistic_m_path(8, @year, @chapel.id, @stake.id, @user.id)} Ver Estadísticas
+
+			- if 9<=Date.today.month
+				.service.span3
+					.icon-awesome
+						%i.icon-folder-open
+					%h4 SEPTIEMBRE
+					%a{href: admin_stadistic_m_path(9, @year, @chapel.id, @stake.id, @user.id)} Ver Estadísticas
+			- if 10<=Date.today.month
+				.service.span3
+					.icon-awesome
+						%i.icon-folder-open
+					%h4 OCTUBRE
+					%a{href: admin_stadistic_m_path(10, @year, @chapel.id, @stake.id, @user.id)} Ver Estadísticas
+
+			- if 11<=Date.today.month
+				.service.span3
+					.icon-awesome
+						%i.icon-folder-open
+					%h4 NOVIEMBRE
+					%a{href: admin_stadistic_m_path(11, @year, @chapel.id, @stake.id, @user.id)} Ver Estadísticas
+			- if 12<=Date.today.month
+				.service.span3
+					.icon-awesome
+						%i.icon-folder-open
+					%h4 DICIEMBRE
+					%a{href: admin_stadistic_m_path(12, @year, @chapel.id, @stake.id, @user.id)} Ver Estadísticas
+
+		- if @roles.where("name = ?","Secretario de Barrio").any? == true
+			.service.span3
+				.icon-awesome
+					%i.icon-folder-open
+				%h4 Metas del Año
+				%a{href: admin_goals_index_path(@year, @user.id, @chapel.id)} Ver Metas
+
+		- if @roles.where("name = ?","Presidente de Estaca").any? == true
+			.service.span3
+				.icon-awesome
+					%i.icon-folder-open
+				%h4 Estadísticas de Todo el Año
+				%a{href: admin_stadistic_m_path(Time.now.month, @year, @chapel.id, @stake.id, @user.id)} Ver Estadísticas
+
+		- if @pastStadistics.size!=0
+			.service.span3
+				.icon-awesome
+					%i.icon-folder-open
+				%h4 Estadísticas Anteriores
+
+				- if @roles.where("name = ?","Secretario de Barrio").any? || @roles.where("name = ?","Obispo").any?
+					%a{href: admin_lastyears_path(@chapel.id, @stake.id, @user.id, @pastStadistics.first.created_at.year)} Ver Estadísticas
+				- else
+					%a{href: admin_lastyears_path(0, @stake.id, @user.id, @pastStadistics.first.created_at.year)} Ver Estadísticas
+
+		- if @roles.where("name = ?","Presidente de Estaca").any? || @roles.where("name = ?","Secretario de Estaca").any?
+			.service.span3
+				.icon-awesome
+					%i.icon-folder-open
+				%h4 Exportar Estadísticas a Excel
+				%a{href: admin_stadistics_path(format: "xls")} Exportar
+				

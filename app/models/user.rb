@@ -3,13 +3,14 @@ class User < ActiveRecord::Base
   attr_accessor :password, :password_old
   attr_accessible :email, :first_name, :last_name, :password, 
                   :password_confirmation, :encrypted_password, :password_old,
-                  :phone, :stake
+                  :phone, :chapel_id
 
   has_and_belongs_to_many :roles, :join_table => "users_roles"
   has_many :permissions, :through => :roles
   has_and_belongs_to_many :groups, :join_table => "users_groups"
   accepts_nested_attributes_for :roles
   accepts_nested_attributes_for :groups
+  belongs_to :chapel
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -17,12 +18,11 @@ class User < ActiveRecord::Base
                     :uniqueness => true,
                     :format => {:with => email_regex}
   validates :first_name, :presence => true
-  validates :phone, :presence => true
-  validates :stake, :presence => true
   validates :last_name, :presence => true
   validates :password , :presence     => true, 
                         :confirmation => true,
                         :length       => { :within => 6..40 }
+  validates :chapel_id, :presence => true
 
   before_save :encrypt_password
 

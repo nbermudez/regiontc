@@ -1,0 +1,42 @@
+.row
+	.contact-form.span3
+	.contact-us.login-form.span7
+		- @chapels = Chapel.where("stake_id = ?", @stake.id)
+		.call-to-action-text
+			.ca-button
+				- @chapels.each do |ch|
+					%a{href: admin_stadistic_m_path(@month, @year, ch.id, @stake.id, @user.id)}= ch.name
+		%ul.teaser
+			%li{style: "list-style: none;"}
+				%h3{style: "margin-left:40%;"}
+					= @chapel.name
+				%table#hor-minimalist-b
+					%thead
+						%tr
+							%th{scope: "col"} Tipo de Estadística
+							%th{scope: "col"} Total del Mes
+							%th{scope: "col"} Acumulados
+							%th{scope: "col"} Meta
+					%tbody
+						- @stadistics.each do |s|
+							= form_for(s, url: admin_stadistic_path(s), remote: true) do |f|
+								%tr
+									%td= Typestadistic.find(s.typestadistic_id).name
+									%td= f.text_field :total, :url=>{:action => :update}, :frequency => 0.05, :update=>s, :with => :total
+
+									- collectStad = Stadistic.where("typestadistic_id = ? and month <= ? and year = ? and chapel_id = ?", s.typestadistic_id, @month, @year, @chapel)
+
+									- @sum = 0
+									- collectStad.each do |cs|
+										- @sum = @sum + cs.total
+
+									%td= @sum
+
+									- goal = Goal.where("typestadistic_id = ? and year = ? and chapel_id = ?", s.typestadistic_id, @year, @chapel.id)
+
+									- if goal.size==0
+										%td
+											0
+									- else
+										%td= goal.first.total
+				%br/

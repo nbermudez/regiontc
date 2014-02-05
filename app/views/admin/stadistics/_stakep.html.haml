@@ -1,0 +1,82 @@
+- @typestads = Typestadistic.all
+
+.row
+	.call-to-action-text
+		.ca-button
+			- for i in 1..Time.now.month
+				- case i
+				- when 1
+					%a{href: admin_stadistic_m_path(i, @year, @chapel.id, @stake.id, @user.id)} Enero
+				- when 2
+					%a{href: admin_stadistic_m_path(i, @year, @chapel.id, @stake.id, @user.id)} Febrero
+				- when 3
+					%a{href: admin_stadistic_m_path(i, @year, @chapel.id, @stake.id, @user.id)} Marzo
+				- when 4
+					%a{href: admin_stadistic_m_path(i, @year, @chapel.id, @stake.id, @user.id)} Abril
+				- when 5
+					%a{href: admin_stadistic_m_path(i, @year, @chapel.id, @stake.id, @user.id)} Mayo
+				- when 6
+					%a{href: admin_stadistic_m_path(i, @year, @chapel.id, @stake.id, @user.id)} Junio
+				- when 7
+					%a{href: admin_stadistic_m_path(i, @year, @chapel.id, @stake.id, @user.id)} Julio
+				- when 8
+					%a{href: admin_stadistic_m_path(i, @year, @chapel.id, @stake.id, @user.id)} Agosto
+				- when 9
+					%a{href: admin_stadistic_m_path(i, @year, @chapel.id, @stake.id, @user.id)} Septiembre
+				- when 10
+					%a{href: admin_stadistic_m_path(i, @year, @chapel.id, @stake.id, @user.id)} Octubre
+				- when 11
+					%a{href: admin_stadistic_m_path(i, @year, @chapel.id, @stake.id, @user.id)} Noviembre
+				- else
+					%a{href: admin_stadistic_m_path(i, @year, @chapel.id, @stake.id, @user.id)} Diciembre
+
+
+	.container{style: "overflow:auto;"}
+		%table
+			%tr
+				%th{rowspan: "2"}
+					Nombre de la Capilla
+				- @typestads.each do |ts|
+					%th{colspan: "3"}
+						= ts.name
+
+			%tr
+
+				- @typestads.each do |ts|
+					%td
+						Total Mensual
+					%td
+						Acumulado
+					%td
+						Meta 
+						= @year
+
+
+			- @chapels = Chapel.where("stake_id = ?",@stake.id)
+			- @chapels.each do |chr|
+				%tr
+					%th
+						= chr.name
+					- @typestads.each do |ts|
+						- chStad = Stadistic.where("month = ? and year = ? and chapel_id = ? and typestadistic_id = ?",@month, @year, chr.id, ts.id)
+						%td
+							- if chStad.size==0
+								0
+							- else
+								= chStad.first.total
+						- collectStad = Stadistic.where("typestadistic_id = ? and month <= ? and year = ? and chapel_id = ?", ts.id, @month, @year, chr.id)
+
+						- sum = 0
+						- collectStad.each do |cs|
+							- sum = sum + cs.total
+
+						%td
+							= sum
+
+						- goal = Goal.where("typestadistic_id = ? and year = ? and chapel_id = ?", ts.id, @year, chr.id)
+
+						%td
+							- if goal.size==0
+								0
+							- else
+								= goal.first.total

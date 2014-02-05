@@ -10,7 +10,7 @@ class ResourcesController < ApplicationController
 		@tags = Array.new
 		@category = params[:id]
 		tmp = TagCategorization.find_by_category_id(params[:id])
-		@tags = tmp.tags unless tmp.nil?
+		@tags = tmp.tags.order('id desc') unless tmp.nil?
 		@path_recursos = "Recursos/#{Category.find(params[:id]).name}"
 	end
 
@@ -20,7 +20,7 @@ class ResourcesController < ApplicationController
 		@category = params[:c_id]
 
 
-		@resources = tag.resources unless tag.nil?
+		@resources = tag.resources.order('position desc') unless tag.nil?
 		@tag = tag.title unless tag.nil?
 
 		@ret = "Recursos/#{Category.find(params[:c_id]).name}"

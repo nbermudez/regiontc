@@ -1,0 +1,122 @@
+class AddDataToChapels < ActiveRecord::Migration
+  def up
+  	
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Bellavista', '', '', 1, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Coyoles', '', '', 1, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Olanchito', '', '', 1, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Sonaguera', '', '', 1, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Tocoa', '', '', 1, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Trujillo', '', '', 1, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Bella Vista', '', '', 2, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Buenos Aires', '', '', 2, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('El Confite', '', '', 2, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('El Iman', '', '', 2, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Independencia', '', '', 2, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Las Acacias', '', '', 2, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Las Colinas', '', '', 2, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Lempira', '', '', 2, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Miramar', '', '', 2, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Montecristro', '', '', 2, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Bendeck', '', '', 3, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Berlin', '', '', 3, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Corocol', '', '', 3, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('El Centro', '', '', 3, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('El Progreso', '', '', 3, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Jazminez', '', '', 3, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('La Sarrosas', '', '', 3, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Palermo', '', '', 3, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Santa Rita', '', '', 3, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Mezapa', '', '', 3, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('El Porvenir', '', '', 4, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('La Lima', '', '', 4, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('La Mesa', '', '', 4, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('La Paz', '', '', 4, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Pineda', '', '', 4, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Planeta', '', '', 4, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Jerusalem', '', '', 4, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Santiago', '', '', 4, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Calpules', '', '', 5, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Las Lomas', '', '', 5, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Los Angeles', '', '', 5, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Luisiana', '', '', 5, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Planes', '', '', 5, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Satelite', '', '', 5, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Seis de Mayo', '', '', 5, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('San Juan', '', '', 5, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Tela', '', '', 6, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Telamar', '', '', 6, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Roatan', '', '', 6, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+
+
+
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Campana', '', '', 7, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Choloma', '', '', 7, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('El Centro', '', '', 7, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Los Almendros', '', '', 7, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Puerto Cortes', '', '', 7, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('La Jutosa', '', '', 7, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Monterrey', '', '', 7, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Chamelecon', '', '', 8, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Cofradia', '', '', 8, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('San Antonio', '', '', 8, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Santa Ana', '', '', 8, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Villas del Rio', '', '', 8, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Dos Caminos', '', '', 8, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('15 de Septiembre', '', '', 8, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('San Jorge', '', '', 8, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('San Marcos', '', '', 8, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Cerro Verde', '', '', 9, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Fesitranh', '', '', 9, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Lopez Arellano', '', '', 9, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Trincheras', '', '', 9, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Victoria', '', '', 9, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('El Bosque', '', '', 9, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Ideal', '', '', 10, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Jardines del Valle', '', '', 10, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('La Aldea', '', '', 10, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('La Primavera', '', '', 10, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Las Brisas', '', '', 10, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Los Castanos', '', '', 10, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Ocotillo', '', '', 10, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('San Pedro Sula', '', '', 10, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Smith', '', '', 10, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('El Carmen', '', '', 10, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Barandillas', '', '', 11, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Cabanitas', '', '', 11, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('La Union', '', '', 11, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Las Palmas', '', '', 11, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Medina', '', '', 11, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Montefresco', '', '', 11, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('El Monchito', '', '', 12, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Las Flores', '', '', 12, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Morelos', '', '', 12, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Potrerillos', '', '', 12, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Santa Cruz de Yojoa', '', '', 12, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Victoria', '', '', 12, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Villanueva', '', '', 12, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('El Paraiso', '', '', 12, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Yojoa', '', '', 12, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Copan Ruinas', '', '', 13, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Dolores', '', '', 13, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('El Dorado', '', '', 13, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Florida', '', '', 13, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('La Entrada', '', '', 13, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Nueva Ocotepeque', '', '', 13, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+
+  	execute "insert into chapels (name, address, phone, stake_id, created_at, updated_at) values ('Santa Barbara', '', '', 14, '2014-01-29T3:00:00.000', '2014-01-29T3:00:00.000')"
+  end
+
+  def down
+  end
+end

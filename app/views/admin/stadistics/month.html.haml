@@ -1,0 +1,44 @@
+.page-title
+	.container
+		.row
+			.span12
+				%i.icon-folder-open.page-title-icon
+				%h2 
+					Estadísticas del Mes de
+					= @monthText
+				%br/
+				%h4 
+					= @user.name 
+					(
+					- @roles.each do |role|
+						= role.name
+
+					)
+				- if @roles.where("name = ?","Secretario (a) de Capilla").any? || @roles.where("name = ?","Obispo").any?
+					%h5
+						Barrio 
+						= @chapel.name 
+						en la Estaca 
+						= @stake.name
+				- else
+					%h5
+						Estaca 
+						= @stake.name
+
+- if @roles.where("name = ?","Secretario de Barrio").any?
+	= render 'chapels'
+
+- if @roles.where("name = ?","Presidente de Estaca").any?
+	= render 'stakep'
+
+- if @roles.where("name = ?","Secretario de Estaca").any?
+	= render 'stakes'
+
+- if @roles.where("name = ?","Obispo").any?
+	= render 'chapelo'
+
+.call-to-action-text
+	.ca-button
+		%a{href: admin_stadistics_path} Volver a mi Dashboard
+
+

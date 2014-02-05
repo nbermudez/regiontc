@@ -8,6 +8,10 @@
                     <%= f.label :filename, 'Título', :class => 'nameLabel' %>
                     <%= f.text_field :filename, :placeholder => 'Título...' %>
                 </div>
+                <div class="name">
+                    <%= f.label :position, 'Posición (Orden)', :class => 'nameLabel' %>
+                    <%= f.number_field :position, :placeholder => 'Si no se especifica se usará un número auto incremental...' %>
+                </div>
                 <div class"name">
                     <label>Archivo*</label>
                     <div class="FileUpload" id="FileUpload">

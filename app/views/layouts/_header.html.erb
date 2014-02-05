@@ -28,19 +28,13 @@
                                     <a href="/recursos"><i class="icon-folder-open"></i><br />Recursos</a>
                                 </li>
                                 <li
-                                <% if @current_page == "HISTORIAS" %>
-                                    class="current-page"
-                                <%end %>
-                                >
-                                    <a href="/historias"><i class="icon-book"></i><br />Historias</a>
-                                </li>
                                 <% unless current_user.nil? %>
                                 <li
                                 <% if @current_page == "EVENTOS" %>
                                     class="current-page"
                                 <%end %>
                                 >
-                                    <a href="/events"><i class="icon-calendar"></i><br />Eventos</a>
+                                    <a href="/calendar"><i class="icon-calendar"></i><br />Eventos</a>
                                 </li>
                                 <% end %>
                                 <% unless current_user.nil? %>
