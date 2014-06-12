@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   attr_accessor :password, :password_old
   attr_accessible :email, :first_name, :last_name, :password, 
                   :password_confirmation, :encrypted_password, :password_old,
-                  :phone, :chapel_id, :roles
+                  :phone, :chapel_id, :roles, :password_reset_code
 
   has_and_belongs_to_many :roles, :join_table => "users_roles"
   has_many :permissions, :through => :roles
@@ -45,6 +45,11 @@ class User < ActiveRecord::Base
     (user && user.salt == cookie_salt) ? user : nil
   end
 
+  def make_password_reset_code
+    self.password_reset_code = Digest::SHA1.hexdigest( Time.now.to_s.split(//).sort_by {rand}.join )
+    self.save(:validate => false)
+  end
+  
   private
     def encrypt_password
       self.salt = make_salt if new_record?
@@ -63,9 +68,5 @@ class User < ActiveRecord::Base
       Digest::SHA2.hexdigest(string)
     end
 
-  protected
 
-    def make_password_reset_code
-      self.password_reset_code = Digest::SHA1.hexdigest( Time.now.to_s.split(//).sort_by {rand}.join )
-    end
 end
