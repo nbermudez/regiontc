@@ -27,7 +27,17 @@
                                 >
                                     <a href="/recursos"><i class="icon-folder-open"></i><br />Recursos</a>
                                 </li>
-                                <li
+                                <li>
+
+                              <li
+                              <% if @current_page == "ARTICULOS" %>
+                              class="current-page"
+                              <%end %>
+                              >
+                              <%= link_to '<i class="icon-folder-open"></i><br />Articulos'.html_safe, articles_path %>
+
+                              </li>
+                              <li>
                                 
                                 <li
                                 <% if @current_page == "EVENTOS" %>
