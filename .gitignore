@@ -2,8 +2,9 @@
 capybara-*.html
 .rspec
 /.idea
+regionsps.iml
 /log
-/tmp
+/tmp/*
 /db/*.sqlite3
 /public/system
 /coverage/
