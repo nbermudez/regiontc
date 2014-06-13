@@ -14,14 +14,11 @@
 ActiveRecord::Schema.define(:version => 20140611172702) do
 
   create_table "articles", :force => true do |t|
-    t.integer  "resource_id"
     t.boolean  "active"
     t.boolean  "published"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
-
-  add_index "articles", ["resource_id"], :name => "index_articles_on_resource_id"
 
   create_table "categories", :force => true do |t|
     t.string   "name"
