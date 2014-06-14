@@ -81,7 +81,8 @@ class Admin::StadisticsController < ApplicationController
 					format.xls
 				end
 			end
-		end
+    end
+
 	end
 
 	def new
@@ -188,7 +189,7 @@ class Admin::StadisticsController < ApplicationController
 			end
 		end
 
-		@stadistics = Stadistic.where("month = ? and year = ? and chapel_id = ?", @month, @year, @chapel.id)
+		@stadistics = Stadistic.where("month = ? and year = ? and chapel_id = ?", @month, @year, @chapel.id).order.reverse
 	end
 
 	def lastyears
