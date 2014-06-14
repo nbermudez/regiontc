@@ -62,12 +62,8 @@ class Admin::StadisticsController < ApplicationController
 
 		if @roles != nil
 			if @roles.where("name = ?","Secretario de Barrio").any?
-				if @goals.size!=0
-					if @goals.first.sentToStake==false
-						redirect_to admin_goals_index_path(@year,@user.id,@chapel.id), :flash => { :error => "***Se encontraron ciertos problemas sin resolver." }
-					end
-				else
-					redirect_to admin_goals_index_path(@year,@user.id,@chapel.id), :flash => { :error => "***Se encontraron ciertos problemas sin resolver." }
+				if @goals.size!=0 || @goals.first.sentToStake==false
+					  redirect_to admin_goals_index_path(@year,@user.id,@chapel.id), :flash => { :error => "***Se encontraron ciertos problemas sin resolver." }
 				end
 			end
 		end
