@@ -58,12 +58,12 @@ ActiveRecord::Schema.define(:version => 20140611172702) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
+    t.text     "description"
     t.string   "place"
     t.datetime "celebrated_at"
-    t.boolean  "is_public"
-    t.text     "description"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.integer  "is_public"
     t.string   "invited_group"
   end
 
