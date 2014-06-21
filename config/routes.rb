@@ -24,6 +24,7 @@ Regionsps::Application.routes.draw do
   match '/contact_us'            => 'contacts#new', :via => :get, :as => 'contacts'
   match '/contact_us'            => 'contacts#send_message'
   match '/message_sent'          => 'contacts#sent'
+  match '/trips'            => 'events#trips', :via => :get, :as => 'trips'
 
   namespace :admin do
     resources :stadistics
