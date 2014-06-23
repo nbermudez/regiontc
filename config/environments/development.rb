@@ -16,6 +16,16 @@ Regionsps::Application.configure do
 
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    user_name:            'mhotivo@gmail.com',
+    password:             'abc098765',
+    authentication:       'plain',
+    enable_starttls_auto: true
+  }
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -35,6 +45,7 @@ Regionsps::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  config.secret_token= "b25498768ac511556c536a1cb01d2376"
 
   config.stakes = ["San Pedro Sula", "Valle de Sula", "Merendón", "Fesitranh", 
     "Villanueva", "La Ceiba", "La Lima", "El Progreso",
