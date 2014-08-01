@@ -13,6 +13,10 @@
     # S3_ASSET_URL: regionsps_bucket.s3-website-us-east-1.amazonaws.com
     # Configuration for Amazon S3
 
+    ENV['S3_SECRET'] = 'EuuG+iJJM1jRn9ki2APqwaucmUDdKgIalLk0oWwo'
+    ENV['S3_KEY'] = 'AKIAIYHTSYTB5T2WGENA'
+    ENV['S3_BUCKET_NAME'] = 'regionsps_bucket/public'
+
     CarrierWave.configure do |config|
       if Rails.env.staging? || Rails.env.production?
         config.storage = :fog

@@ -50,6 +50,4 @@ Regionsps::Application.configure do
   config.stakes = ["San Pedro Sula", "Valle de Sula", "Merendón", "Fesitranh", 
     "Villanueva", "La Ceiba", "La Lima", "El Progreso",
      "Santa Rosa", "Olanchito", "Satélite"]
-
-  config.aws_access_key_id = 'AKIAIYHTSYTB5T2WGENA'
 end
