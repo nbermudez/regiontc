@@ -59,5 +59,6 @@ module Regionsps
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    config.secret = 'ac04d2d4221a1d2286397ffdee2bad383b7cd32eae2abb2bff73d922ea9460c2a393ae9729866a5062e85c1f18fceb45a503be63c4257786e7dc058835edf9e2'
   end
 end
