@@ -4,7 +4,8 @@ namespace :debug do
     articles = Article.all
     articles.each do |article|
       puts "Article Id: #{article.id}"
-      puts "Article Url: #{article.resource.file}"
+      puts "Article Resource file: #{article.resource.file}"
+      puts "Article Url attribute: #{article.resource.url}"
       puts '--------------------------------------'
     end
   end
