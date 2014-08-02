@@ -24,6 +24,11 @@ class Resource < ActiveRecord::Base
 			if (self.position.nil?)
 				self.position = self.id
 				self.save
-			end
+      end
+
+      if self.url.nil?
+        self.url = self.file_url
+        self.save
+      end
 		end
 end
