@@ -11,10 +11,10 @@ Stake.create(:name =>"Staca")
 
 Chapel.create(:stake_id=>1, :address=>"somewhere", :name=>"capilla", :phone=>"3234")
 
-#User.create!(:email=>"nestor.bermudez@unitec.edu", :first_name => "Nestor",
-#	:last_name=>"Bermudez", :password => "you_wont_know_my_password",
-#	:password_confirmation => "you_wont_know_my_password", :phone => "Not available",
-#	:chapel_id =>1)
+User.create!(:email=>"nestor.bermudez@unitec.edu", :first_name => "Nestor",
+	:last_name=>"Bermudez", :password => "you_wont_know_my_password",
+	:password_confirmation => "you_wont_know_my_password", :phone => "Not available",
+	:chapel_id =>1)
 
 Permission.create(:name => "Crear Usuario", :description => "No description available")
 Permission.create(:name => "Modificar Usuario", :description => "No description available")
