@@ -15,7 +15,7 @@
 
     ENV['S3_SECRET'] = 'EuuG+iJJM1jRn9ki2APqwaucmUDdKgIalLk0oWwo'
     ENV['S3_KEY'] = 'AKIAIYHTSYTB5T2WGENA'
-    ENV['S3_BUCKET_NAME'] = 'regionsps_bucket/public'
+    ENV['S3_BUCKET_NAME'] = 'regionteg/public'
 
     CarrierWave.configure do |config|
       if Rails.env.staging? || Rails.env.production?
