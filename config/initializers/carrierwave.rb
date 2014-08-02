@@ -16,6 +16,8 @@
     ENV['S3_SECRET'] = 'EuuG+iJJM1jRn9ki2APqwaucmUDdKgIalLk0oWwo'
     ENV['S3_KEY'] = 'AKIAIYHTSYTB5T2WGENA'
     ENV['S3_BUCKET_NAME'] = 'regionteg'
+    ENV['S3_ASSET_URL'] = 'regionteg.s3-website-us-east-1.amazonaws.com'
+    ENV['S3_REGION'] = 'us-east1-2'
 
     CarrierWave.configure do |config|
       if Rails.env.staging? || Rails.env.production?
