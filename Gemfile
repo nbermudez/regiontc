@@ -6,8 +6,8 @@ gem 'gravatar_image_tag', '0.1.0'
 
 gem "rmagick"
 gem "carrierwave"
-gem 'excon', '~> 0.39.0'
-gem "fog", "~> 1.3.1"
+gem 'excon'
+gem "fog"
 
 gem 'sqlite3', :group => [:development, :test]
 gem 'pg', :group => [:development, :test]
