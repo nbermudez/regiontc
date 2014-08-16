@@ -103,11 +103,11 @@ strong { font-weight: bold; }
 .header a.brand {
     display: inline-block;
     text-indent: -9999px;
-    width: 230px;
+    width: 270px;
     height: 47px;
     padding: 30px 0;
-    background: url(logooficial.png) 20px center no-repeat;
-    background-size: 200px 90px;
+    background: url(logooficial.jpg) 20px center no-repeat;
+    background-size: 230px 90px;
 }
 
 .header ul.nav {
