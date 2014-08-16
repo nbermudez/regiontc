@@ -104,10 +104,9 @@ strong { font-weight: bold; }
     display: inline-block;
     text-indent: -9999px;
     width: 270px;
-    height: 47px;
     padding: 30px 0;
     background: url(logooficial.jpg) 20px center no-repeat;
-    background-size: 230px 90px;
+    background-size: 250px 79px;
 }
 
 .header ul.nav {
